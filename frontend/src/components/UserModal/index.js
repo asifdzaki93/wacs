@@ -59,11 +59,11 @@ const useStyles = makeStyles(theme => ({
 
 const UserSchema = Yup.object().shape({
 	name: Yup.string()
-		.min(2, "Too Short!")
-		.max(50, "Too Long!")
-		.required("Required"),
-	password: Yup.string().min(5, "Too Short!").max(50, "Too Long!"),
-	email: Yup.string().email("Invalid email").required("Required"),
+		.min(2, "Terlalu Pendek!")
+		.max(50, "Terlalu Panjang!")
+		.required("Diperlukan"),
+	password: Yup.string().min(5, "Terlalu Pendek!").max(50, "Terlalu Panjang!"),
+	email: Yup.string().email("Email tidak valid").required("Diperlukan"),
 });
 
 const UserModal = ({ open, onClose, userId }) => {
@@ -209,7 +209,7 @@ const UserModal = ({ open, onClose, userId }) => {
 														required
 													>
 														<MenuItem value="admin">Admin</MenuItem>
-														<MenuItem value="user">User</MenuItem>
+														<MenuItem value="user">Pengguna</MenuItem>
 													</Field>
 												</>
 											)}
@@ -253,7 +253,7 @@ const UserModal = ({ open, onClose, userId }) => {
 								
 								
 								<div className={classes.divider}>
-									<span className={classes.dividerText}>Liberações</span>
+									<span className={classes.dividerText}>Pembebasan</span>
 								</div>
 								
 								<Can

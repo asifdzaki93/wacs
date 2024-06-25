@@ -211,89 +211,70 @@ const PromptModal = ({ open, onClose, promptId }) => {
                                     rows={10}
                                     multiline={true}
                                 />
-                                <QueueSelectSingle />
-                                <div className={classes.multFieldLine}>
-                                    <FormControl fullWidth margin="dense" variant="outlined">
-                                    <InputLabel>{i18n.t("promptModal.form.voice")}</InputLabel>
-                                        <Select
-                                            id="type-select"
-                                            labelWidth={60}
-                                            name="voice"
-                                            value={selectedVoice}
-                                            onChange={handleChangeVoice}
-                                            multiple={false}
-                                        >
-                                            <MenuItem key={"texto"} value={"texto"}>
-                                                Texto
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-FranciscaNeural"} value={"pt-BR-FranciscaNeural"}>
-                                                Francisa
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-AntonioNeural"} value={"pt-BR-AntonioNeural"}>
-                                                Antônio
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-BrendaNeural"} value={"pt-BR-BrendaNeural"}>
-                                                Brenda
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-DonatoNeural"} value={"pt-BR-DonatoNeural"}>
-                                                Donato
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-ElzaNeural"} value={"pt-BR-ElzaNeural"}>
-                                                Elza
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-FabioNeural"} value={"pt-BR-FabioNeural"}>
-                                                Fábio
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-GiovannaNeural"} value={"pt-BR-GiovannaNeural"}>
-                                                Giovanna
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-HumbertoNeural"} value={"pt-BR-HumbertoNeural"}>
-                                                Humberto
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-JulioNeural"} value={"pt-BR-JulioNeural"}>
-                                                Julio
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-LeilaNeural"} value={"pt-BR-LeilaNeural"}>
-                                                Leila
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-LeticiaNeural"} value={"pt-BR-LeticiaNeural"}>
-                                                Letícia
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-ManuelaNeural"} value={"pt-BR-ManuelaNeural"}>
-                                                Manuela
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-NicolauNeural"} value={"pt-BR-NicolauNeural"}>
-                                                Nicolau
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-ValerioNeural"} value={"pt-BR-ValerioNeural"}>
-                                                Valério
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-YaraNeural"} value={"pt-BR-YaraNeural"}>
-                                                Yara
-                                            </MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                    <Field
-                                        as={TextField}
-                                        label={i18n.t("promptModal.form.voiceKey")}
-                                        name="voiceKey"
-                                        error={touched.voiceKey && Boolean(errors.voiceKey)}
-                                        helperText={touched.voiceKey && errors.voiceKey}
-                                        variant="outlined"
-                                        margin="dense"
-                                        fullWidth
-                                    />
-                                    <Field
-                                        as={TextField}
-                                        label={i18n.t("promptModal.form.voiceRegion")}
-                                        name="voiceRegion"
-                                        error={touched.voiceRegion && Boolean(errors.voiceRegion)}
-                                        helperText={touched.voiceRegion && errors.voiceRegion}
-                                        variant="outlined"
-                                        margin="dense"
-                                        fullWidth
-                                    />
-                                </div>
+<QueueSelectSingle />
+<div className={classes.multFieldLine}>
+    <FormControl fullWidth margin="dense" variant="outlined">
+        <InputLabel>{i18n.t("promptModal.form.voice")}</InputLabel>
+        <Select
+            id="type-select"
+            labelWidth={60}
+            name="voice"
+            value={selectedVoice}
+            onChange={handleChangeVoice}
+            multiple={false}
+        >
+            <MenuItem key={"texto"} value={"texto"}>
+                Teks
+            </MenuItem>
+            <MenuItem key={"id-ID-Standard-A"} value={"id-ID-Standard-A"}>
+                Standard A
+            </MenuItem>
+            <MenuItem key={"id-ID-Standard-B"} value={"id-ID-Standard-B"}>
+                Standard B
+            </MenuItem>
+            <MenuItem key={"id-ID-Standard-C"} value={"id-ID-Standard-C"}>
+                Standard C
+            </MenuItem>
+            <MenuItem key={"id-ID-Standard-D"} value={"id-ID-Standard-D"}>
+                Standard D
+            </MenuItem>
+            <MenuItem key={"id-ID-Wavenet-A"} value={"id-ID-Wavenet-A"}>
+                Wavenet A
+            </MenuItem>
+            <MenuItem key={"id-ID-Wavenet-B"} value={"id-ID-Wavenet-B"}>
+                Wavenet B
+            </MenuItem>
+            <MenuItem key={"id-ID-Wavenet-C"} value={"id-ID-Wavenet-C"}>
+                Wavenet C
+            </MenuItem>
+            <MenuItem key={"id-ID-Wavenet-D"} value={"id-ID-Wavenet-D"}>
+                Wavenet D
+            </MenuItem>
+        </Select>
+    </FormControl>
+    <Field
+        as={TextField}
+        label={i18n.t("promptModal.form.voiceKey")}
+        name="voiceKey"
+        error={touched.voiceKey && Boolean(errors.voiceKey)}
+        helperText={touched.voiceKey && errors.voiceKey}
+        variant="outlined"
+        margin="dense"
+        fullWidth
+    />
+    <Field
+        as={TextField}
+        label={i18n.t("promptModal.form.voiceRegion")}
+        name="voiceRegion"
+        error={touched.voiceRegion && Boolean(errors.voiceRegion)}
+        helperText={touched.voiceRegion && errors.voiceRegion}
+        variant="outlined"
+        margin="dense"
+        fullWidth
+    />
+</div>
+
+
                                 
                                 <div className={classes.multFieldLine}>
                                     <Field

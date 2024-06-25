@@ -27,7 +27,6 @@ import api from "../../services/api";
 import { i18n } from "../../translate/i18n";
 import toastError from "../../errors/toastError";
 import QueueSelect from "../QueueSelect";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -57,9 +56,9 @@ const useStyles = makeStyles((theme) => ({
 
 const SessionSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+    .min(2, "Terlalu Pendek!")
+    .max(50, "Terlalu Panjang!")
+    .required("Diperlukan"),
 });
 
 const WhatsAppModal = ({ open, onClose, whatsAppId }) => {
@@ -361,7 +360,7 @@ const whatsappData = {
                       fullWidth
                       type="number"
                       as={TextField}
-                      label='Transferir após x (minutos)'
+                      label='Transfer setelah x (menit)'
                       name="timeToTransfer"
                       error={touched.timeToTransfer && Boolean(errors.timeToTransfer)}
                       helperText={touched.timeToTransfer && errors.timeToTransfer}
@@ -380,13 +379,13 @@ const whatsappData = {
                         setSelectedQueueId(selectedId)
                       }}
                       multiple={false}
-                      title={'Fila de Transferência'}
+                      title={'Antrian Transfer'}
                     />
                   </Grid>
 
                   </Grid>
                   <Grid spacing={2} container>
-                    {/* ENCERRAR CHATS ABERTOS APÓS X HORAS */}
+                    {/* TUTUP CHAT TERBUKA SETELAH X JAM */}
                     <Grid xs={12} md={12} item>
                       <Field
                         as={TextField}
@@ -400,7 +399,7 @@ const whatsappData = {
                       />
                     </Grid>
                   </Grid>
-                  {/* MENSAGEM POR INATIVIDADE*/}
+                  {/* PESAN KARENA TIDAK AKTIF */}
                   <div>
                     <Field
                       as={TextField}

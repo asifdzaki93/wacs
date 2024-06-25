@@ -2,7 +2,7 @@ import Mustache from "mustache";
 import Contact from "../models/Contact";
 
 export const greeting = (): string => {
-  const greetings = ["Boa madrugada", "Bom dia", "Boa tarde", "Boa noite"];
+  const greetings = ["Selamat pagi", "Selamat pagi", "Selamat siang", "Selamat malam"];
   const h = new Date().getHours();
   // eslint-disable-next-line no-bitwise
   return greetings[(h / 6) >> 0];
@@ -29,16 +29,16 @@ export default (body: string, contact: Contact): string => {
   const ss: string = `0${Hr.getSeconds()}`.slice(-2);
 
   if (hh >= 6) {
-    ms = "Bom dia";
+    ms = "Selamat pagi";
   }
   if (hh > 11) {
-    ms = "Boa tarde";
+    ms = "Selamat siang";
   }
   if (hh > 17) {
-    ms = "Boa noite";
+    ms = "Selamat malam";
   }
   if (hh > 23 || hh < 6) {
-    ms = "Boa madrugada";
+    ms = "Selamat pagi";
   }
 
   const protocol = yy + mm + dd + String(hh) + min + ss;

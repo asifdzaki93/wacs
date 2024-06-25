@@ -580,7 +580,7 @@ const convertTextToSpeechAndSaveToFile = (
   filename: string,
   subscriptionKey: string,
   serviceRegion: string,
-  voice: string = "pt-BR-FabioNeural",
+  voice: string = "id-ID-Standard-C",
   audioToFormat: string = "mp3"
 ): Promise<void> => {
   return new Promise((resolve, reject) => {
@@ -701,10 +701,10 @@ const handleOpenAi = async (
     limit: prompt.maxMessages
   });
 
-  const promptSystem = `Nas respostas utilize o nome ${sanitizeName(
-    contact.name || "Amigo(a)"
-  )} para identificar o cliente.\nSua resposta deve usar no máximo ${prompt.maxTokens
-    } tokens e cuide para não truncar o final.\nSempre que possível, mencione o nome dele para ser mais personalizado o atendimento e mais educado. Quando a resposta requer uma transferência para o setor de atendimento, comece sua resposta com 'Ação: Transferir para o setor de atendimento'.\n
+  const promptSystem = `Dalam jawaban gunakan nama ${sanitizeName(
+    contact.name || "Kakak"
+  )} untuk mengidentifikasi pelanggan.\nJawaban Anda harus menggunakan maksimal ${prompt.maxTokens
+    } token dan pastikan tidak terpotong di akhir.\nSelalu sebutkan namanya jika memungkinkan untuk membuat layanan lebih personal dan sopan. Ketika jawaban memerlukan transfer ke departemen layanan, mulai jawaban Anda dengan 'Aksi: Transfer ke departemen layanan'.\n
   ${prompt.prompt}\n`;
 
   let messagesOpenAi: ChatCompletionRequestMessage[] = [];
@@ -737,10 +737,10 @@ const handleOpenAi = async (
 
     let response = chat.data.choices[0].message?.content;
 
-    if (response?.includes("Ação: Transferir para o setor de atendimento")) {
+    if (response?.includes("Aksi: Transfer ke departemen layanan")) {
       await transferQueue(prompt.queueId, ticket, contact);
       response = response
-        .replace("Ação: Transferir para o setor de atendimento", "")
+        .replace("Aksi: Transfer ke departemen layanan", "")
         .trim();
     }
 
@@ -803,11 +803,10 @@ const handleOpenAi = async (
       temperature: prompt.temperature
     });
     let response = chat.data.choices[0].message?.content;
-
-    if (response?.includes("Ação: Transferir para o setor de atendimento")) {
+    if (response?.includes("Tindakan: Transfer ke bagian pelayanan")) {
       await transferQueue(prompt.queueId, ticket, contact);
       response = response
-        .replace("Ação: Transferir para o setor de atendimento", "")
+        .replace("Tindakan: Transfer ke bagian pelayanan", "")
         .trim();
     }
     if (prompt.voice === "texto") {
@@ -1100,7 +1099,7 @@ const verifyQueue = async (
     if (firstQueue?.options) {
       chatbot = firstQueue.options.length > 0;
     }
-	
+
 	//envio de midia
     if (firstQueue.mediaPath !== null) {
       console.log(firstQueue.mediaPath)
@@ -1173,7 +1172,7 @@ const verifyQueue = async (
 
   /**
    * recebe as mensagens dos usuários e envia as opções de fila
-   * tratamento de mensagens para resposta aos usuarios apartir do chatbot/fila.         
+   * tratamento de mensagens para resposta aos usuarios apartir do chatbot/fila.
    */
   const botText = async () => {
     let options = "";
@@ -1188,7 +1187,7 @@ const verifyQueue = async (
     };
     let lastMsg = map_msg.get(contact.number)
     let invalidOption = "Opção inválida, por favor, escolha uma opção válida."
-    
+
 
     // console.log('getBodyMessage(msg)', getBodyMessage(msg))
     console.log('textMessage2', textMessage)
@@ -1949,7 +1948,7 @@ const handleMessage = async (
       console.log(e);
     }
 
-    // Atualiza o ticket se a ultima mensagem foi enviada por mim, para que possa ser finalizado. 
+    // Atualiza o ticket se a ultima mensagem foi enviada por mim, para que possa ser finalizado.
     try {
       await ticket.update({
         fromMe: msg.key.fromMe,

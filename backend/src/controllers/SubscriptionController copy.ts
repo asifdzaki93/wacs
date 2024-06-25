@@ -55,10 +55,10 @@ export const createSubscription = async (
       expiracao: 3600
     },
     valor: {
-      original: price.toLocaleString("pt-br", { minimumFractionDigits: 2 }).replace(",", ".")
+      original: price.toLocaleString("id-ID", { minimumFractionDigits: 2 }).replace(",", ".")
     },
     chave: process.env.GERENCIANET_PIX_KEY,
-    solicitacaoPagador: `#Fatura:${invoiceId}`
+    solicitacaoPagador: `#Invoice :${invoiceId}`
     };
   try {
     const pix = await gerencianet.pixCreateImmediateCharge(null, body);
@@ -158,7 +158,7 @@ export const webhook = async (
 
       if (detahe.status === "CONCLUIDA") {
         const { solicitacaoPagador } = detahe;
-        const invoiceID = solicitacaoPagador.replace("#Fatura:", "");
+        const invoiceID = solicitacaoPagador.replace("#Invoice:", "");
         const invoices = await Invoices.findByPk(invoiceID);
         const companyId =invoices.companyId;
         const company = await Company.findByPk(companyId);
