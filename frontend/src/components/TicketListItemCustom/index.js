@@ -204,7 +204,6 @@ const useStyles = makeStyles((theme) => ({
   const { user } = useContext(AuthContext);
   const [verpreview, setverpreview] = useState(false);
   const { profile } = user;
-
   useEffect(() => {
     if (ticket.userId && ticket.user) {
       setTicketUser(ticket.user?.name?.toUpperCase());
@@ -262,16 +261,16 @@ const useStyles = makeStyles((theme) => ({
 
 
       if (minutesDifference >= 3 && minutesDifference <= 10) {
-        labelText = `(${minutesDifference} m atrás)`;
+        labelText = `(${minutesDifference} m yang lalu)`;
         labelColor = 'green';
       } else if (minutesDifference >= 30 && minutesDifference < 60) {
-        labelText = `(${minutesDifference} m atrás)`;
+        labelText = `(${minutesDifference} m yang lalu)`;
         labelColor = 'Orange';
       } else if (minutesDifference > 60  && hoursDifference < 24) {
-        labelText = `(${hoursDifference} h atrás)`;
+        labelText = `(${hoursDifference} jam yang lalu)`;
         labelColor = 'red';
       } else if (hoursDifference >= 24) {
-        labelText = `(${Math.floor(hoursDifference / 24)} dias atrás)`;
+        labelText = `(${Math.floor(hoursDifference / 24)} hari yang lalu)`;
         labelColor = 'red';
       }
 
@@ -290,7 +289,7 @@ const useStyles = makeStyles((theme) => ({
           {labelText}
         </Badge>
       );
-      // Agendando a próxima atualização após 30 segundos
+      // Agendando a próxima atualização após 30 detik
       setTimeout(updateLastInteractionLabel, 30 * 1000);
     };
 
@@ -358,12 +357,12 @@ const useStyles = makeStyles((theme) => ({
 	
 	    const handleSendMessage = async (id) => {
         
-        const msg = `{{ms}} *{{name}}*, meu nome é *${user?.name}* e agora vou prosseguir com seu atendimento!`;
+        const msg = `{{ms}} *{{name}}*, nama saya *${user?.name}* dan sekarang saya akan melanjutkan layanan Anda!`;
         const message = {
             read: 1,
             fromMe: true,
             mediaUrl: "",
-            body: `*Mensagem Automática:*\n${msg.trim()}`,
+            body: `*Pesan Otomatis:*\n${msg.trim()}`,
         };
         try {
             await api.post(`/messages/${id}`, message);
@@ -432,7 +431,7 @@ const useStyles = makeStyles((theme) => ({
           [classes.pendingTicket]: ticket.status === "pending",
         })}
       >
-        <Tooltip arrow placement="right" title={ticket.queue?.name?.toUpperCase() || "SEM FILA"} >
+        <Tooltip arrow placement="right" title={ticket.queue?.name?.toUpperCase() || "TANPA ANTRIAN"} >
           <span style={{ backgroundColor: ticket.queue?.color || "#7C7C7C" }} className={classes.ticketQueueColor}></span>
         </Tooltip>
         <ListItemAvatar>
@@ -476,7 +475,7 @@ const useStyles = makeStyles((theme) => ({
           <Box className={classes.ticketInfo1}>{renderTicketInfo()}</Box>
         </ListItemSecondaryAction>
                 {profile === "admin" && (
-                  <Tooltip title="Espiar Conversa">
+                  <Tooltip title="Lihat Percakapan">
                     <VisibilityIcon
                       onClick={() => setOpenTicketMessageDialog(true)}
                       fontSize="small"
@@ -503,16 +502,16 @@ const useStyles = makeStyles((theme) => ({
                 variant="body2"
                 color="textSecondary"
               > {ticket.lastMessage && ticket.lastMessage.includes('data:image/png;base64') ? 
-              <MarkdownWrapper> Localização</MarkdownWrapper> : 
+              <MarkdownWrapper> Lokasi</MarkdownWrapper> : 
               <MarkdownWrapper>{ticket.lastMessage}</MarkdownWrapper>
             }
 
             {ticket.lastMessage && verpreview ? (
               <>
                 {ticket.lastMessage.includes('VCARD') ? (
-                  <MarkdownWrapper>Novo Contato recebido</MarkdownWrapper>
+                  <MarkdownWrapper>Kontak Baru diterima</MarkdownWrapper>
                 ) : ticket.lastMessage.includes('data:image') ? (
-                  <MarkdownWrapper>Localização recebida</MarkdownWrapper>
+                  <MarkdownWrapper>Lokasi diterima</MarkdownWrapper>
                 ) : (
                   <MarkdownWrapper>
                     {ticket.lastMessage.slice(0, 20) + '...'}
@@ -526,7 +525,7 @@ const useStyles = makeStyles((theme) => ({
                 <span className={classes.secondaryContentSecond} >
                   {ticket?.whatsapp?.name ? <Badge className={classes.connectionTag}>{ticket?.whatsapp?.name?.toUpperCase()}</Badge> : <br></br>}
                   {ticketUser ? <Badge style={{ backgroundColor: "#000000" }} className={classes.connectionTag}>{ticketUser}</Badge> : <br></br>}
-                  <Badge style={{ backgroundColor: ticket.queue?.color || "#7c7c7c" }} className={classes.connectionTag}>{ticket.queue?.name?.toUpperCase() || "SEM FILA"}</Badge>
+                  <Badge style={{ backgroundColor: ticket.queue?.color || "#7c7c7c" }} className={classes.connectionTag}>{ticket.queue?.name?.toUpperCase() || "TANPA ANTRIAN"}</Badge>
                 </span>
                 <span style={{ paddingTop: "2px" }} className={classes.secondaryContentSecond} >
                   {tag?.map((tag) => {

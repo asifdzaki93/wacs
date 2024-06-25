@@ -184,10 +184,10 @@ const MarkdownWrapper = ({ children, message }) => {
 	if (!children) return null;
 	const regex = /(?<=FN:)(.*)(?=\n)|(?<=TEL;.*:)(.*)(?=\n)/g;
 
-	// Executar a expressão regular na string do vCard
+	// Eksekusi ekspresi reguler pada string vCard
 	const matches = children.match(regex);
 
-	// Extrair o nome e o número de telefone
+	// Ekstrak nama dan nomor telepon
 	const contact = matches ? matches[0] : '';
 	const number = matches ? matches[1] : '';
 	const vcardStyle = {
@@ -217,8 +217,8 @@ const MarkdownWrapper = ({ children, message }) => {
 			<div style={vcardStyle}>
 				<Avatar style={avatar} src={message.contact.profilePicUrl} alt="contact_image" />
 				<div style={infoStyle}>
-					<p style={p}><strong>Nome:</strong> {contact}</p>
-					<p style={p}><strong>Número:</strong> {number}</p>
+					<p style={p}><strong>Nama:</strong> {contact}</p>
+					<p style={p}><strong>Nomor:</strong> {number}</p>
 				</div>
 			</div>
 		)

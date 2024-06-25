@@ -82,10 +82,10 @@ const useStyles = makeStyles(theme => ({
 
 const FileListSchema = Yup.object().shape({
     name: Yup.string()
-        .min(3, "nome muito curto")
-        .required("Obrigatório"),
+        .min(3, "nama terlalu pendek")
+        .required("Wajib diisi"),
     message: Yup.string()
-        .required("Obrigatório")
+        .required("Wajib diisi")
 });
 
 const FilesModal = ({ open, onClose, fileListId, reload }) => {
@@ -268,7 +268,7 @@ const FilesModal = ({ open, onClose, fileListId, reload }) => {
                                                                        
                                                                         setFiles('options', updatedOptions);
 
-                                                                        // Atualize a lista selectedFileNames para o campo específico
+                                                                        // Atualize a lista selectedFileNames untuk field tertentu
                                                                         const updatedFileNames = [...selectedFileNames];
                                                                         updatedFileNames[index] = selectedFile ? selectedFile.name : '';
                                                                         setSelectedFileNames(updatedFileNames);

@@ -90,7 +90,7 @@ export function HelpManagerForm (props) {
                         <Grid xs={12} sm={6} md={3} item>
                             <Field
                                 as={TextField}
-                                label="Título"
+                                label="Judul"
                                 name="title"
                                 variant="outlined"
                                 className={classes.fullWidth}
@@ -100,7 +100,7 @@ export function HelpManagerForm (props) {
                         <Grid xs={12} sm={6} md={3} item>
                             <Field
                                 as={TextField}
-                                label="Código do Vídeo"
+                                label="Kode Video"
                                 name="video"
                                 variant="outlined"
                                 className={classes.fullWidth}
@@ -110,7 +110,7 @@ export function HelpManagerForm (props) {
                         <Grid xs={12} sm={12} md={6} item>
                             <Field
                                 as={TextField}
-                                label="Descrição"
+                                label="Deskripsi"
                                 name="description"
                                 variant="outlined"
                                 className={classes.fullWidth}
@@ -119,19 +119,19 @@ export function HelpManagerForm (props) {
                         </Grid>
                         <Grid sm={3} md={1} item>
                             <ButtonWithSpinner className={classes.fullWidth} loading={loading} onClick={() => onCancel()} variant="contained">
-                                Limpar
+                                Bersihkan
                             </ButtonWithSpinner>
                         </Grid>
                         { record.id !== undefined ? (
                             <Grid sm={3} md={1} item>
                                 <ButtonWithSpinner className={classes.fullWidth} loading={loading} onClick={() => onDelete(record)} variant="contained" color="secondary">
-                                    Excluir
+                                    Hapus
                                 </ButtonWithSpinner>
                             </Grid>
                         ) : null}
                         <Grid sm={3} md={1} item>
                             <ButtonWithSpinner className={classes.fullWidth} loading={loading} type="submit" variant="contained" color="primary">
-                                Salvar
+                                Simpan
                             </ButtonWithSpinner>
                         </Grid>
                     </Grid>
@@ -151,16 +151,16 @@ export function HelpsManagerGrid (props) {
                 <TableHead>
                 <TableRow>
                     <TableCell align="center" style={{width: '1%'}}>#</TableCell>
-                    <TableCell align="left">Título</TableCell>
-                    <TableCell align="left">Descrição</TableCell>
-                    <TableCell align="left">Vídeo</TableCell>
+                    <TableCell align="left">Judul</TableCell>
+                    <TableCell align="left">Deskripsi</TableCell>
+                    <TableCell align="left">Video</TableCell>
                 </TableRow>
                 </TableHead>
                 <TableBody>
                 {records.map((row) => (
                     <TableRow key={row.id}>
                         <TableCell align="center" style={{width: '1%'}}>
-                            <IconButton onClick={() => onSelect(row)} aria-label="delete">
+                            <IconButton onClick={() => onSelect(row)} aria-label="edit">
                                 <EditIcon />
                             </IconButton>
                         </TableCell>
@@ -202,7 +202,7 @@ export default function HelpsManager () {
             const helpList = await list()
             setRecords(helpList)
         } catch (e) {
-            toast.error('Não foi possível carregar a lista de registros')
+            toast.error('Tidak dapat memuat daftar catatan')
         }
         setLoading(false)
     }
@@ -217,9 +217,9 @@ export default function HelpsManager () {
             }
             await loadHelps()
             handleCancel()
-            toast.success('Operação realizada com sucesso!')
+            toast.success('Operasi berhasil dilakukan!')
         } catch (e) {
-            toast.error('Não foi possível realizar a operação. Verifique se já existe uma helpo com o mesmo nome ou se os campos foram preenchidos corretamente')
+            toast.error('Tidak dapat melakukan operasi. Periksa apakah sudah ada bantuan dengan nama yang sama atau apakah kolom telah diisi dengan benar')
         }
         setLoading(false)
     }
@@ -230,9 +230,9 @@ export default function HelpsManager () {
             await remove(record.id)
             await loadHelps()
             handleCancel()
-            toast.success('Operação realizada com sucesso!')
+            toast.success('Operasi berhasil dilakukan!')
         } catch (e) {
-            toast.error('Não foi possível realizar a operação')
+            toast.error('Tidak dapat melakukan operasi')
         }
         setLoading(false)
     }
@@ -278,12 +278,12 @@ export default function HelpsManager () {
                 </Grid>
             </Grid>
             <ConfirmationModal
-                title="Exclusão de Registro"
+                title="Penghapusan Catatan"
                 open={showConfirmDialog}
                 onClose={() => setShowConfirmDialog(false)}
                 onConfirm={() => handleDelete()}
             >
-                Deseja realmente excluir esse registro?
+                Apakah Anda yakin ingin menghapus catatan ini?
             </ConfirmationModal>
         </Paper>
     )

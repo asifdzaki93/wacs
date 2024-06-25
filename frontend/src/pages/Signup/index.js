@@ -36,7 +36,7 @@ import moment from "moment";
 const Copyright = () => {
 	return (
 		<Typography variant="body2" color="primary" align="center">
-			{"Copyright "}
+			{"Hak Cipta "}
  			<Link color="primary" href="#">
  				{ nomeEmpresa } - v { versionSystem }
  			</Link>{" "}
@@ -68,11 +68,11 @@ const useStyles = makeStyles(theme => ({
 
 const UserSchema = Yup.object().shape({
 	name: Yup.string()
-		.min(2, "Too Short!")
-		.max(50, "Too Long!")
-		.required("Required"),
-	password: Yup.string().min(5, "Too Short!").max(50, "Too Long!"),
-	email: Yup.string().email("Invalid email").required("Required"),
+		.min(2, "Terlalu Pendek!")
+		.max(50, "Terlalu Panjang!")
+		.required("Wajib diisi"),
+	password: Yup.string().min(5, "Terlalu Pendek!").max(50, "Terlalu Panjang!"),
+	email: Yup.string().email("Email tidak valid").required("Wajib diisi"),
 });
 
 const SignUp = () => {
@@ -189,7 +189,7 @@ const SignUp = () => {
 											variant="outlined"
 											fullWidth
 											label="628000000000"
-											inputProps={{ maxLength: 12 }} // Definindo o limite de caracteres
+											inputProps={{ maxLength: 13 }} // Definindo o limite de caracteres
 										/>
 									)}
 								</Field>

@@ -15,12 +15,10 @@ import { i18n } from "../../translate/i18n";
 import { nomeEmpresa } from "../../../package.json";
 import { AuthContext } from "../../context/Auth/AuthContext";
 import logo from "../../assets/logo.png";
-
-
 const Copyright = () => {
 	return (
 		<Typography variant="body2" color="primary" align="center">
-			{"Copyright "}
+			{"Hak Cipta "}
  			<Link color="primary" href="#">
  				{ nomeEmpresa } - v { versionSystem }
  			</Link>{" "}

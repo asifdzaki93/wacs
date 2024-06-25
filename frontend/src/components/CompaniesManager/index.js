@@ -202,7 +202,7 @@ export function CompanyForm(props) {
               <Grid xs={12} sm={6} md={4} item>
                 <Field
                   as={TextField}
-                  label="Nome"
+                  label="Nama"
                   name="name"
                   variant="outlined"
                   className={classes.fullWidth}
@@ -223,7 +223,7 @@ export function CompanyForm(props) {
               <Grid xs={12} sm={6} md={2} item>
                 <Field
                   as={TextField}
-                  label="Telefone"
+                  label="Telepon"
                   name="phone"
                   variant="outlined"
                   className={classes.fullWidth}
@@ -232,11 +232,11 @@ export function CompanyForm(props) {
               </Grid>
               <Grid xs={12} sm={6} md={2} item>
                 <FormControl margin="dense" variant="outlined" fullWidth>
-                  <InputLabel htmlFor="plan-selection">Plano</InputLabel>
+                  <InputLabel htmlFor="plan-selection">Paket</InputLabel>
                   <Field
                     as={Select}
                     id="plan-selection"
-                    label="Plano"
+                    label="Paket"
                     labelId="plan-selection-label"
                     name="planId"
                     margin="dense"
@@ -261,24 +261,24 @@ export function CompanyForm(props) {
                     name="status"
                     margin="dense"
                   >
-                    <MenuItem value={true}>Sim</MenuItem>
-                    <MenuItem value={false}>Não</MenuItem>
+                    <MenuItem value={true}>Ya</MenuItem>
+                    <MenuItem value={false}>Tidak</MenuItem>
                   </Field>
                 </FormControl>
               </Grid>
               <Grid xs={12} sm={6} md={2} item>
                 <FormControl margin="dense" variant="outlined" fullWidth>
-                  <InputLabel htmlFor="status-selection">Campanhas</InputLabel>
+                  <InputLabel htmlFor="status-selection">Kampanye</InputLabel>
                   <Field
                     as={Select}
                     id="campaigns-selection"
-                    label="Campanhas"
+                    label="Kampanye"
                     labelId="campaigns-selection-label"
                     name="campaignsEnabled"
                     margin="dense"
                   >
-                    <MenuItem value={true}>Habilitadas</MenuItem>
-                    <MenuItem value={false}>Desabilitadas</MenuItem>
+                    <MenuItem value={true}>Diaktifkan</MenuItem>
+                    <MenuItem value={false}>Dinonaktifkan</MenuItem>
                   </Field>
                 </FormControl>
               </Grid>
@@ -286,7 +286,7 @@ export function CompanyForm(props) {
                 <FormControl variant="outlined" fullWidth>
                   <Field
                     as={TextField}
-                    label="Data de Vencimento"
+                    label="Tanggal Jatuh Tempo"
                     type="date"
                     name="dueDate"
                     InputLabelProps={{
@@ -301,21 +301,21 @@ export function CompanyForm(props) {
               <Grid xs={12} sm={6} md={2} item>
                 <FormControl margin="dense" variant="outlined" fullWidth>
                   <InputLabel htmlFor="recorrencia-selection">
-                    Recorrência
+                    Frekuensi
                   </InputLabel>
                   <Field
                     as={Select}
-                    label="Recorrência"
+                    label="Frekuensi"
                     labelId="recorrencia-selection-label"
                     id="recurrence"
                     name="recurrence"
                     margin="dense"
                   >
-                    <MenuItem value="MENSAL">Mensal</MenuItem>
-                    {/*<MenuItem value="BIMESTRAL">Bimestral</MenuItem>*/}
-                    {/*<MenuItem value="TRIMESTRAL">Trimestral</MenuItem>*/}
-                    {/*<MenuItem value="SEMESTRAL">Semestral</MenuItem>*/}
-                    {/*<MenuItem value="ANUAL">Anual</MenuItem>*/}
+                    <MenuItem value="MENSAL">Bulanan</MenuItem>
+                    {/*<MenuItem value="BIMESTRAL">Dua Bulanan</MenuItem>*/}
+                    {/*<MenuItem value="TRIMESTRAL">Tiga Bulanan</MenuItem>*/}
+                    {/*<MenuItem value="SEMESTRAL">Enam Bulanan</MenuItem>*/}
+                    {/*<MenuItem value="ANUAL">Tahunan</MenuItem>*/}
                   </Field>
                 </FormControl>
               </Grid>
@@ -329,7 +329,7 @@ export function CompanyForm(props) {
                       onClick={() => onCancel()}
                       variant="contained"
                     >
-                      Limpar
+                      Bersihkan
                     </ButtonWithSpinner>
                   </Grid>
                   {record.id !== undefined ? (
@@ -343,7 +343,7 @@ export function CompanyForm(props) {
                           variant="contained"
                           color="secondary"
                         >
-                          Excluir
+                          Hapus
                         </ButtonWithSpinner>
                       </Grid>
                       <Grid xs={6} md={2} item>
@@ -355,7 +355,7 @@ export function CompanyForm(props) {
                           variant="contained"
                           color="primary"
                         >
-                          + Vencimento
+                          + Jatuh Tempo
                         </ButtonWithSpinner>
                       </Grid>
                       <Grid xs={6} md={1} item>
@@ -367,7 +367,7 @@ export function CompanyForm(props) {
                           variant="contained"
                           color="primary"
                         >
-                          Usuário
+                          Pengguna
                         </ButtonWithSpinner>
                       </Grid>
                     </>
@@ -381,7 +381,7 @@ export function CompanyForm(props) {
                       variant="contained"
                       color="primary"
                     >
-                      Salvar
+                      Simpan
                     </ButtonWithSpinner>
                   </Grid>
                 </Grid>
@@ -400,7 +400,7 @@ export function CompaniesManagerGrid(props) {
   const { dateToClient } = useDate();
 
   const renderStatus = (row) => {
-    return row.status === false ? "Não" : "Sim";
+    return row.status === false ? "Tidak" : "Ya";
   };
 
   const renderPlan = (row) => {
@@ -415,10 +415,10 @@ export function CompaniesManagerGrid(props) {
     ) {
       const setting = row.settings.find((s) => s.key === "campaignsEnabled");
       if (setting) {
-        return setting.value === "true" ? "Habilitadas" : "Desabilitadas";
+        return setting.value === "true" ? "Diaktifkan" : "Dinonaktifkan";
       }
     }
-    return "Desabilitadas";
+    return "Dinonaktifkan";
   };
 
   const rowStyle = (record) => {
@@ -451,14 +451,14 @@ export function CompaniesManagerGrid(props) {
             <TableCell align="center" style={{ width: "1%" }}>
               #
             </TableCell>
-            <TableCell align="left">Nome</TableCell>
+            <TableCell align="left">Nama</TableCell>
             <TableCell align="left">E-mail</TableCell>
-            <TableCell align="left">Telefone</TableCell>
-            <TableCell align="left">Plano</TableCell>
-            <TableCell align="left">Campanhas</TableCell>
+            <TableCell align="left">Telepon</TableCell>
+            <TableCell align="left">Paket</TableCell>
+            <TableCell align="left">Kampanye</TableCell>
             <TableCell align="left">Status</TableCell>
-            <TableCell align="left">Criada Em</TableCell>
-            <TableCell align="left">Vencimento</TableCell>
+            <TableCell align="left">Dibuat Pada</TableCell>
+            <TableCell align="left">Jatuh Tempo</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -518,7 +518,7 @@ export default function CompaniesManager() {
       const companyList = await list();
       setRecords(companyList);
     } catch (e) {
-      toast.error("Não foi possível carregar a lista de registros");
+      toast.error("Tidak dapat memuat daftar catatan");
     }
     setLoading(false);
   };
@@ -533,10 +533,10 @@ export default function CompaniesManager() {
       }
       await loadPlans();
       handleCancel();
-      toast.success("Operação realizada com sucesso!");
+      toast.success("Operasi berhasil dilakukan!");
     } catch (e) {
       toast.error(
-        "Não foi possível realizar a operação. Verifique se já existe uma empresa com o mesmo nome ou se os campos foram preenchidos corretamente"
+        "Tidak dapat melakukan operasi. Periksa apakah sudah ada perusahaan dengan nama yang sama atau apakah kolom telah diisi dengan benar"
       );
     }
     setLoading(false);
@@ -548,9 +548,9 @@ export default function CompaniesManager() {
       await remove(record.id);
       await loadPlans();
       handleCancel();
-      toast.success("Operação realizada com sucesso!");
+      toast.success("Operasi berhasil dilakukan!");
     } catch (e) {
-      toast.error("Não foi possível realizar a operação");
+      toast.error("Tidak dapat melakukan operasi");
     }
     setLoading(false);
   };
@@ -615,12 +615,12 @@ export default function CompaniesManager() {
         </Grid>
       </Grid>
       <ConfirmationModal
-        title="Exclusão de Registro"
+        title="Penghapusan Catatan"
         open={showConfirmDialog}
         onClose={() => setShowConfirmDialog(false)}
         onConfirm={() => handleDelete()}
       >
-        Deseja realmente excluir esse registro?
+        Apakah Anda yakin ingin menghapus catatan ini?
       </ConfirmationModal>
     </Paper>
   );

@@ -105,7 +105,7 @@ export function PlanManagerForm(props) {
             {(values) => (
                 <Form className={classes.fullWidth}>
                     <Grid spacing={1} justifyContent="flex-start" container>
-                        {/* NOME */}
+                        {/* NAMA */}
                         <Grid xs={12} sm={6} md={2} item>
                             <Field
                                 as={TextField}
@@ -117,7 +117,7 @@ export function PlanManagerForm(props) {
                             />
                         </Grid>
 
-                        {/* USUARIOS */}
+                        {/* PENGGUNA */}
                         <Grid xs={12} sm={6} md={1} item>
                             <Field
                                 as={TextField}
@@ -130,7 +130,7 @@ export function PlanManagerForm(props) {
                             />
                         </Grid>
 
-                        {/* CONEXOES */}
+                        {/* KONEKSI */}
                         <Grid xs={12} sm={6} md={1} item>
                             <Field
                                 as={TextField}
@@ -143,11 +143,11 @@ export function PlanManagerForm(props) {
                             />
                         </Grid>
 
-                        {/* FILAS */}
+                        {/* ANTRIAN */}
                         <Grid xs={12} sm={6} md={1} item>
                             <Field
                                 as={TextField}
-                                label="Filas"
+                                label="Antrian"
                                 name="queues"
                                 variant="outlined"
                                 className={classes.fullWidth}
@@ -156,11 +156,11 @@ export function PlanManagerForm(props) {
                             />
                         </Grid>
 
-                        {/* VALOR */}
+                        {/* NILAI */}
                         <Grid xs={12} sm={6} md={1} item>
                             <Field
                                 as={TextField}
-                                label="Valor"
+                                label="Nilai"
                                 name="value"
                                 variant="outlined"
                                 className={classes.fullWidth}
@@ -169,7 +169,7 @@ export function PlanManagerForm(props) {
                             />
                         </Grid>
 
-                        {/* CAMPANHAS */}
+                        {/* KAMPANYE */}
                         <Grid xs={12} sm={6} md={2} item>
                             <FormControl margin="dense" variant="outlined" fullWidth>
                                 <InputLabel htmlFor="useCampaigns-selection">{i18n.t("plans.form.campaigns")}</InputLabel>
@@ -187,7 +187,7 @@ export function PlanManagerForm(props) {
                             </FormControl>
                         </Grid>
 
-                        {/* AGENDAMENTOS */}
+                        {/* JADWAL */}
                         <Grid xs={12} sm={8} md={2} item>
                             <FormControl margin="dense" variant="outlined" fullWidth>
                                 <InputLabel htmlFor="useSchedules-selection">{i18n.t("plans.form.schedules")}</InputLabel>
@@ -205,14 +205,14 @@ export function PlanManagerForm(props) {
                             </FormControl>
                         </Grid>
 
-                        {/* CHAT INTERNO */}
+                        {/* OBROLAN INTERNAL */}
                         <Grid xs={12} sm={8} md={2} item>
                             <FormControl margin="dense" variant="outlined" fullWidth>
-                                <InputLabel htmlFor="useInternalChat-selection">Chat Interno</InputLabel>
+                                <InputLabel htmlFor="useInternalChat-selection">Obrolan Internal</InputLabel>
                                 <Field
                                     as={Select}
                                     id="useInternalChat-selection"
-                                    label="Chat Interno"
+                                    label="Obrolan Internal"
                                     labelId="useInternalChat-selection-label"
                                     name="useInternalChat"
                                     margin="dense"
@@ -223,14 +223,14 @@ export function PlanManagerForm(props) {
                             </FormControl>
                         </Grid>
 
-                        {/* API Externa */}
+                        {/* API EKSTERNAL */}
                         <Grid xs={12} sm={8} md={4} item>
                             <FormControl margin="dense" variant="outlined" fullWidth>
-                                <InputLabel htmlFor="useExternalApi-selection">API Externa</InputLabel>
+                                <InputLabel htmlFor="useExternalApi-selection">API Eksternal</InputLabel>
                                 <Field
                                     as={Select}
                                     id="useExternalApi-selection"
-                                    label="API Externa"
+                                    label="API Eksternal"
                                     labelId="useExternalApi-selection-label"
                                     name="useExternalApi"
                                     margin="dense"
@@ -266,7 +266,7 @@ export function PlanManagerForm(props) {
                                 <Field
                                     as={Select}
                                     id="useOpenAi-selection"
-                                    label="Talk.Ai"
+                                    label="Open.Ai"
                                     labelId="useOpenAi-selection-label"
                                     name="useOpenAi"
                                     margin="dense"
@@ -277,14 +277,14 @@ export function PlanManagerForm(props) {
                             </FormControl>
                         </Grid>
 
-                        {/* INTEGRACOES */}
+                        {/* INTEGRASI */}
                         <Grid xs={12} sm={8} md={2} item>
                             <FormControl margin="dense" variant="outlined" fullWidth>
-                                <InputLabel htmlFor="useIntegrations-selection">Integrações</InputLabel>
+                                <InputLabel htmlFor="useIntegrations-selection">Integrasi</InputLabel>
                                 <Field
                                     as={Select}
                                     id="useIntegrations-selection"
-                                    label="Integrações"
+                                    label="Integrasi"
                                     labelId="useIntegrations-selection-label"
                                     name="useIntegrations"
                                     margin="dense"
@@ -367,15 +367,15 @@ export function PlansManagerGrid(props) {
                         <TableCell align="left">{i18n.t("plans.form.name")}</TableCell>
                         <TableCell align="center">{i18n.t("plans.form.users")}</TableCell>
                         <TableCell align="center">{i18n.t("plans.form.connections")}</TableCell>
-                        <TableCell align="center">Filas</TableCell>
-                        <TableCell align="center">Valor</TableCell>
+                        <TableCell align="center">Antrian</TableCell>
+                        <TableCell align="center">Nilai</TableCell>
                         <TableCell align="center">{i18n.t("plans.form.campaigns")}</TableCell>
                         <TableCell align="center">{i18n.t("plans.form.schedules")}</TableCell>
-                        <TableCell align="center">Chat Interno</TableCell>
-                        <TableCell align="center">API Externa</TableCell>
+                        <TableCell align="center">Obrolan Internal</TableCell>
+                        <TableCell align="center">API Eksternal</TableCell>
                         <TableCell align="center">Kanban</TableCell>
                         <TableCell align="center">Open.Ai</TableCell>
-                        <TableCell align="center">Integrações</TableCell>
+                        <TableCell align="center">Integrasi</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -390,7 +390,7 @@ export function PlansManagerGrid(props) {
                             <TableCell align="center">{row.users || '-'}</TableCell>
                             <TableCell align="center">{row.connections || '-'}</TableCell>
                             <TableCell align="center">{row.queues || '-'}</TableCell>
-                            <TableCell align="center">{i18n.t("plans.form.money")} {row.value ? row.value.toLocaleString('pt-br', { minimumFractionDigits: 2 }) : '00.00'}</TableCell>
+                            <TableCell align="center">{i18n.t("plans.form.money")} {row.value ? row.value.toLocaleString('id-ID', { minimumFractionDigits: 2 }) : '00.00'}</TableCell>
                             <TableCell align="center">{renderCampaigns(row)}</TableCell>
                             <TableCell align="center">{renderSchedules(row)}</TableCell>
                             <TableCell align="center">{renderInternalChat(row)}</TableCell>
@@ -405,7 +405,6 @@ export function PlansManagerGrid(props) {
         </Paper>
     )
 }
-
 export default function PlansManager() {
     const classes = useStyles()
     const { list, save, update, remove } = usePlans()
@@ -442,7 +441,7 @@ export default function PlansManager() {
             const planList = await list()
             setRecords(planList)
         } catch (e) {
-            toast.error('Não foi possível carregar a lista de registros')
+            toast.error('Tidak dapat memuat daftar catatan')
         }
         setLoading(false)
     }
@@ -458,9 +457,9 @@ export default function PlansManager() {
             }
             await loadPlans()
             handleCancel()
-            toast.success('Operação realizada com sucesso!')
+            toast.success('Operasi berhasil dilakukan!')
         } catch (e) {
-            toast.error('Não foi possível realizar a operação. Verifique se já existe uma plano com o mesmo nome ou se os campos foram preenchidos corretamente')
+            toast.error('Tidak dapat melakukan operasi. Periksa apakah sudah ada rencana dengan nama yang sama atau apakah kolom telah diisi dengan benar')
         }
         setLoading(false)
     }
@@ -471,9 +470,9 @@ export default function PlansManager() {
             await remove(record.id)
             await loadPlans()
             handleCancel()
-            toast.success('Operação realizada com sucesso!')
+            toast.success('Operasi berhasil dilakukan!')
         } catch (e) {
-            toast.error('Não foi possível realizar a operação')
+            toast.error('Tidak dapat melakukan operasi')
         }
         setLoading(false)
     }
@@ -547,12 +546,12 @@ export default function PlansManager() {
                 </Grid>
             </Grid>
             <ConfirmationModal
-                title="Exclusão de Registro"
+                title="Penghapusan Catatan"
                 open={showConfirmDialog}
                 onClose={() => setShowConfirmDialog(false)}
                 onConfirm={() => handleDelete()}
             >
-                Deseja realmente excluir esse registro?
+                Apakah Anda benar-benar ingin menghapus catatan ini?
             </ConfirmationModal>
         </Paper>
     )

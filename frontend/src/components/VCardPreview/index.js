@@ -11,7 +11,6 @@ import { Button, Divider, } from "@material-ui/core";
 import NewTicketModal from "../NewTicketModal";
 
 
-
 const VCardPreview = ({ contact, numbers }) => {
     const history = useHistory();
     const { user } = useContext(AuthContext);
@@ -48,7 +47,7 @@ const VCardPreview = ({ contact, numbers }) => {
                     padding: "20px",
                     outline: "none",
                 }}>
-                    <h2>Selecione a Fila</h2>
+                    <h2>Pilih Antrian</h2>
                     {user.queues.map((queue) => (
                         <div key={queue.id}>
                             <Button onClick={() => handleQueueSelection(queue.id)}>
@@ -176,11 +175,11 @@ const handleCloseOrOpenTicket = (ticket) => {
                     </Grid>
 			<Grid item xs={9}>                
                 <Typography style={{ marginLeft: "10px" }} variant="body2" color="textSecondary" gutterBottom>
-                    <strong>Nome:</strong> {selectedContact.name}
+                    <strong>Nama:</strong> {selectedContact.name}
                 </Typography>
                 <Typography style={{ marginLeft: "10px" }} variant="body2" color="textSecondary" gutterBottom>
                     <Typography variant="body2" color="textSecondary" component="span">
-                        <strong>Telefone:</strong> {selectedContact.number}
+                        <strong>Telepon:</strong> {selectedContact.number}
                     </Typography>
                 </Typography>
             </Grid>
@@ -195,7 +194,7 @@ const handleCloseOrOpenTicket = (ticket) => {
                                             }}
                             disabled={!selectedContact.number || !isContactValid}
                         >
-                        {isContactValid ? "Conversar (Novo Ticket)" : "CONTATO FORA DO WHATSAPP"}
+                        {isContactValid ? "Mulai Percakapan (Tiket Baru)" : "KONTAK TIDAK TERSEDIA DI WHATSAPP"}
 
                         </Button>
                     </Grid>

@@ -20,10 +20,10 @@ const VcardPreview = ({ messageBody }) => {
     const number = vcardObject.TEL.value;
     return (
         <div>
-            <h2>Preview do Cartão de Contato</h2>
+            <h2>Pratinjau Kartu Kontak</h2>
             <div>
-                <p style={infoStyle}>Nome: {contact}</p>
-                <p style={infoStyle}>Número de WhatsApp: {number}</p>
+                <p style={infoStyle}>Nama: {contact}</p>
+                <p style={infoStyle}>Nomor WhatsApp: {number}</p>
             </div>
         </div>
     );

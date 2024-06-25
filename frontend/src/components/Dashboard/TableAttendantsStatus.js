@@ -49,7 +49,7 @@ export default function TableAttendantsStatus(props) {
         return attendants.map((a, k) => (
             <TableRow key={k}>
                 <TableCell>{a.name}</TableCell>
-                <TableCell align="center" title="1 - Insatisfeito, 2 - Satisfeito, 3 - Muito Satisfeito" className={classes.pointer}>
+                <TableCell align="center" title="1 - Tidak Puas, 2 - Puas, 3 - Sangat Puas" className={classes.pointer}>
                     <RatingBox rating={a.rating} />
                 </TableCell>
                 <TableCell align="center">{formatTime(a.avgSupportTime, 2)}</TableCell>
@@ -74,7 +74,7 @@ export default function TableAttendantsStatus(props) {
                 <TableRow>
                     <TableCell>Nama</TableCell>
                     <TableCell align="center">Penilaian</TableCell>
-                    <TableCell align="center">Waktu Rata-rata Layanan</TableCell>
+                    <TableCell align="center">Kecepatan Pelayanan</TableCell>
                     <TableCell align="center">Status (Saat Ini)</TableCell>
                 </TableRow>
             </TableHead>
