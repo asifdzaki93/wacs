@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "versionSystem": "4.8.2",
-  "nomeEmpresa": "AppBot",
+  "nomeEmpresa": "As-If Tech",
   "private": true,
   "dependencies": {
     "@date-io/date-fns": "^2.14.0",
