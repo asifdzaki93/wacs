@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
 	chatContainer: {
 		flex: 1,
 		// backgroundColor: "#eee",
-		padding: theme.spacing(1), //Aqui ele ajusta espaço na tela de ticket
+		padding: theme.spacing(1), //Di sini dia menyesuaikan ruang di layar tiket
 		height: `calc(100% - 48px)`,
 		overflowY: "hidden",
 	},
@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
 		flexDirection: "column",
 	},
 	welcomeMsg: {
-		backgroundColor: theme.palette.boxticket, //DARK MODE PLW DESIGN//
+		backgroundColor: theme.palette.boxticket, //MODE GELAP DESAIN PLW//
 		display: "flex",
 		justifyContent: "space-evenly",
 		alignItems: "center",

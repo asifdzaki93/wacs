@@ -28,38 +28,38 @@ import EditIcon from "@material-ui/icons/Edit";
 
 import "./Schedules.css"; // Importe o arquivo CSS
 
-// Defina a função getUrlParam antes de usá-la
+// Defina a fungsi getUrlParam sebelum menggunakannya
 function getUrlParam(paramName) {
   const searchParams = new URLSearchParams(window.location.search);
   return searchParams.get(paramName);
 }
 
 const eventTitleStyle = {
-  fontSize: "14px", // Defina um tamanho de fonte menor
-  overflow: "hidden", // Oculte qualquer conteúdo excedente
-  whiteSpace: "nowrap", // Evite a quebra de linha do texto
-  textOverflow: "ellipsis", // Exiba "..." se o texto for muito longo
+  fontSize: "14px", // Tentukan ukuran font yang lebih kecil
+  overflow: "hidden", // Sembunyikan konten yang berlebihan
+  whiteSpace: "nowrap", // Hindari pemutusan baris teks
+  textOverflow: "ellipsis", // Tampilkan "..." jika teks terlalu panjang
 };
 
 const localizer = momentLocalizer(moment);
 var defaultMessages = {
-  date: "Data",
-  time: "Hora",
-  event: "Evento",
-  allDay: "Dia Todo",
-  week: "Semana",
-  work_week: "Agendamentos",
-  day: "Dia",
-  month: "Mês",
-  previous: "Anterior",
-  next: "Próximo",
-  yesterday: "Ontem",
-  tomorrow: "Amanhã",
-  today: "Hoje",
+  date: "Tanggal",
+  time: "Waktu",
+  event: "Acara",
+  allDay: "Sepanjang Hari",
+  week: "Minggu",
+  work_week: "Jadwal",
+  day: "Hari",
+  month: "Bulan",
+  previous: "Sebelumnya",
+  next: "Berikutnya",
+  yesterday: "Kemarin",
+  tomorrow: "Besok",
+  today: "Hari Ini",
   agenda: "Agenda",
-  noEventsInRange: "Não há agendamentos no período.",
+  noEventsInRange: "Tidak ada jadwal dalam periode ini.",
   showMore: function showMore(total) {
-    return "+" + total + " mais";
+    return "+" + total + " lagi";
   }
 };
 

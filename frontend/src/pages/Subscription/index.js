@@ -74,7 +74,7 @@ const Contacts = () => {
       ></SubscriptionModal>
 
       <MainHeader>
-        <Title>Assinatura</Title>
+        <Title>Langganan</Title>
       </MainHeader>
       <Grid item xs={12} sm={4}>
         <Paper
@@ -86,8 +86,8 @@ const Contacts = () => {
           <div>
             <TextField
               id="outlined-full-width"
-              label="Período de teste"
-              defaultValue={`Seu período de teste termina em ${_formatDate(user?.company?.trialExpiration)} dias!`}
+              label="Periode Uji Coba"
+              defaultValue={`Periode uji coba Anda berakhir dalam ${_formatDate(user?.company?.trialExpiration)} hari!`}
               fullWidth
               margin="normal"
               InputLabelProps={{
@@ -104,7 +104,7 @@ const Contacts = () => {
           <div>
             <TextField
               id="outlined-full-width"
-              label="Email de cobrança"
+              label="Email Penagihan"
               defaultValue={user?.company?.email}
               fullWidth
               margin="normal"
@@ -126,7 +126,7 @@ const Contacts = () => {
               onClick={handleOpenContactModal}
               fullWidth
             >
-              Assine Agora!
+              Berlangganan Sekarang!
             </Button>
           </div>
 

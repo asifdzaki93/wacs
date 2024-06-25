@@ -69,7 +69,7 @@ const TicketAdvanced = (props) => {
 
 			<br />
             <Button onClick={() => setOption(1)} variant="contained" color="primary">
-                Selecionar Ticket
+                Pilih Tiket
             </Button>
         </Box>
 	}
@@ -96,8 +96,8 @@ const TicketAdvanced = (props) => {
                     showLabels
                     className={classes.root}
                 >
-                    <BottomNavigationAction label="Ticket" icon={<ChatIcon />} />
-                    <BottomNavigationAction label="Atendimentos" icon={<QuestionAnswerIcon />} />
+                    <BottomNavigationAction label="Tiket" icon={<ChatIcon />} />
+                    <BottomNavigationAction label="Layanan" icon={<QuestionAnswerIcon />} />
                 </BottomNavigation>
             </Box>
             <Box className={classes.content}>

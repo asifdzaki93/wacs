@@ -151,7 +151,7 @@ const SignUp = () => {
 										variant="outlined"
 										fullWidth
 										id="name"
-										label="Nome da Empresa"
+										label="Nama Instansi/ Perusahaan"
 									/>
 								</Grid>
 
@@ -188,8 +188,8 @@ const SignUp = () => {
 											{...field}
 											variant="outlined"
 											fullWidth
-											label="DDD988888888"
-											inputProps={{ maxLength: 11 }} // Definindo o limite de caracteres
+											label="628000000000"
+											inputProps={{ maxLength: 12 }} // Definindo o limite de caracteres
 										/>
 									)}
 								</Field>
@@ -210,13 +210,13 @@ const SignUp = () => {
 									/>
 								</Grid>
 								<Grid item xs={12}>
-									<InputLabel htmlFor="plan-selection">Plano</InputLabel>
+									<InputLabel htmlFor="plan-selection">Tarif</InputLabel>
 									<Field
 										as={Select}
 										variant="outlined"
 										fullWidth
 										id="plan-selection"
-										label="Plano"
+										label="Tarif"
 										name="planId"
 										required
 									>
