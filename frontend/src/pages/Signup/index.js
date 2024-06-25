@@ -222,7 +222,7 @@ const SignUp = () => {
 									>
 										{plans.map((plan, key) => (
 											<MenuItem key={key} value={plan.id}>
-												{plan.name} - Atendentes: {plan.users} - WhatsApp: {plan.connections} - Filas: {plan.queues} - R$ {plan.value}
+												{plan.name} - Petugas: {plan.users} - WhatsApp: {plan.connections} - Antrian: {plan.queues} - Rp {plan.value}
 											</MenuItem>
 										))}
 									</Field>
