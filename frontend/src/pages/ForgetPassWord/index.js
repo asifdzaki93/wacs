@@ -114,7 +114,7 @@ const handleSendEmail = async (values) => {
     if (response.data.status === 404) {
       toast.error("Email tidak ditemukan");
     } else {
-      toast.success("Email terkirim dengan sukses!");
+      toast.success("Email berhasil dikirim!");
     }
   } catch (err) {
     console.log("API Error:", err);
@@ -133,7 +133,7 @@ const handleResetPassword = async (values) => {
       await api.post(
         `${process.env.REACT_APP_BACKEND_URL}/resetpasswords/${email}/${token}/${newPassword}`
       );
-      setError(""); // Limpe o erro se não houver erro
+      setError(""); // Hapus pesan error jika tidak ada error
       toast.success("Kata sandi berhasil direset.");
       history.push("/login");
     } catch (err) {
@@ -147,7 +147,7 @@ const UserSchema = Yup.object().shape({
   email: Yup.string().email("Email tidak valid").required("Diperlukan"),
   newPassword: isResetPasswordButtonClicked
     ? Yup.string()
-        .required("Kolom wajib diisi")
+        .required("Kolom ini harus diisi")
         .matches(
           passwordRegex,
           "Kata sandi harus minimal 8 karakter, dengan huruf besar, huruf kecil, dan angka."
@@ -157,7 +157,7 @@ const UserSchema = Yup.object().shape({
     is: (newPassword) => isResetPasswordButtonClicked && newPassword,
     then: Yup.string()
       .oneOf([Yup.ref("newPassword"), null], "Kata sandi tidak cocok")
-      .required("Kolom wajib diisi"),
+      .required("Kolom ini harus diisi"),
     otherwise: Yup.string(), // Tanpa validasi jika bukan reset password
   }),
 });
@@ -174,7 +174,7 @@ return (
           />
         </div>
         <Typography component="h1" variant="h5">
-          Redefinir Kata Sandi
+          Atur Ulang Kata Sandi
         </Typography>
         <Formik
           initialValues={{
@@ -311,7 +311,7 @@ return (
                   color="primary"
                   className={classes.submit}
                 >
-                  Redefinir Kata Sandi
+                  Atur Ulang Kata Sandi
                 </Button>
               ) : (
                 <Button
@@ -332,7 +332,7 @@ return (
                     component={RouterLink}
                     to="/signup"
                   >
-                    Tidak punya akun? Daftar!
+                    Tidak memiliki akun? Daftar!
                   </Link>
                 </Grid>
               </Grid>

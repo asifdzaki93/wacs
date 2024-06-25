@@ -283,7 +283,7 @@ const ContactLists = () => {
                   </TableCell>
                   <TableCell align="center">
                     <a href={planilhaExemplo} download="planilha.xlsx">
-                      <IconButton size="small" title="Baixar Planilha Exemplo">
+                      <IconButton size="small" title="Unduh Contoh Spreadsheet">
                         <DownloadIcon />
                       </IconButton>
                     </a>

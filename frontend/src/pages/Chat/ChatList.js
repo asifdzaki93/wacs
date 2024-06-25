@@ -117,12 +117,12 @@ export default function ChatList({
   return (
     <>
       <ConfirmationModal
-        title={"Excluir Conversa"}
+        title={"Hapus Percakapan"}
         open={confirmationModal}
         onClose={setConfirmModalOpen}
         onConfirm={handleDelete}
       >
-        Esta ação não pode ser revertida, confirmar?
+        Tindakan ini tidak dapat dibatalkan, konfirmasi?
       </ConfirmationModal>
       <div className={classes.mainContainer}>
         <div className={classes.chatList}>
@@ -150,7 +150,7 @@ export default function ChatList({
                           });
                         }}
                         edge="end"
-                        aria-label="delete"
+                        aria-label="edit"
                         size="small"
                         style={{ marginRight: 5 }}
                       >

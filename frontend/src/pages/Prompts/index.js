@@ -187,7 +187,7 @@ const Prompts = () => {
     <MainContainer>
       <Paper className={classes.redBox} variant="outlined">
         <Typography variant="body1">
-          <strong>Pemberitahuan Penting:</strong> Untuk semua pengguna Whaticket yang mengalami gangguan dalam penggunaan OpenAI, kami ingin menjelaskan bahwa ini bukan kesalahan sistem. OpenAI menawarkan kredit gratis sebesar $5 USD untuk pendaftaran baru, tetapi keuntungan ini juga memiliki batas waktu, biasanya sekitar tiga bulan. Saat kredit yang disediakan habis, diperlukan pengisian ulang akun untuk melanjutkan penggunaan layanan. Penting untuk menyadari kebijakan ini guna memastikan pengalaman yang berkelanjutan dan tanpa gangguan dalam penggunaan OpenAI dengan Whaticket. Jika Anda menyadari layanan berhenti berfungsi, periksa apakah kredit gratis Anda telah habis dan pertimbangkan untuk mengisi ulang akun jika diperlukan. Kami siap membantu dan menjelaskan pertanyaan tambahan yang mungkin muncul. Terima kasih atas pengertian Anda dan kami akan terus bekerja untuk menawarkan layanan terbaik kepada pengguna kami.
+          <strong>Pemberitahuan Penting:</strong> Gangguan penggunaan OpenAI bukan kesalahan sistem. OpenAI memberikan kredit gratis $5 USD untuk pendaftaran baru dengan batas waktu tiga bulan. Jika kredit habis, isi ulang akun untuk melanjutkan layanan. Periksa kredit Anda jika layanan berhenti dan isi ulang jika perlu. Kami siap membantu pertanyaan Anda. Terima kasih atas pengertian Anda.
         </Typography>
         <Typography variant="body1">
           <strong>Link Bermanfaat:</strong>

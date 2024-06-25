@@ -11,7 +11,7 @@ import {
 import { Bar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import brLocale from 'date-fns/locale/pt-BR';
+import idLocale from 'date-fns/locale/id';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { Button, Stack, TextField } from '@mui/material';
 import Typography from "@material-ui/core/Typography";
@@ -83,11 +83,11 @@ export const ChatsUser = () => {
 
     const dataCharts = {
 
-        labels: ticketsData && ticketsData?.data.length > 0 && ticketsData?.data.map((item) => item.nome),
+        labels: ticketsData && ticketsData?.data.length > 0 && ticketsData?.data.map((item) => item.nama),
         datasets: [
             {
                 data: ticketsData?.data.length > 0 && ticketsData?.data.map((item, index) => {
-                    return item.quantidade
+                    return item.jumlah
                 }),
                 backgroundColor: '#2DDD7F',
             },
@@ -101,7 +101,7 @@ export const ChatsUser = () => {
             const { data } = await api.get(`/dashboard/ticketsUsers?initialDate=${format(initialDate, 'yyyy-MM-dd')}&finalDate=${format(finalDate, 'yyyy-MM-dd')}&companyId=${companyId}`);
             setTicketsData(data);
         } catch (error) {
-            toast.error('Erro ao obter informações da conversa');
+            toast.error('Gagal mendapatkan informasi percakapan');
         }
     }
 
@@ -113,7 +113,7 @@ export const ChatsUser = () => {
 
             <Stack direction={'row'} spacing={2} alignItems={'center'} sx={{ my: 2, }} >
 
-                <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={brLocale}>
+                <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={idLocale}>
                     <DatePicker
                         value={initialDate}
                         onChange={(newValue) => { setInitialDate(newValue) }}
@@ -123,7 +123,7 @@ export const ChatsUser = () => {
                     />
                 </LocalizationProvider>
 
-                <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={brLocale}>
+                <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={idLocale}>
                     <DatePicker
                         value={finalDate}
                         onChange={(newValue) => { setFinalDate(newValue) }}

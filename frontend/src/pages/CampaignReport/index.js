@@ -130,32 +130,32 @@ const CampaignReport = () => {
   const formatStatus = (val) => {
     switch (val) {
       case "INATIVA":
-        return "Inativa";
+        return "Tidak Aktif";
       case "PROGRAMADA":
-        return "Programada";
+        return "Dijadwalkan";
       case "EM_ANDAMENTO":
-        return "Em Andamento";
+        return "Sedang Berlangsung";
       case "CANCELADA":
-        return "Cancelada";
+        return "Dibatalkan";
       case "FINALIZADA":
-        return "Finalizada";
+        return "Selesai";
       default:
         return val;
     }
-  };
+    };
 
   return (
     <MainContainer>
       <MainHeader>
         <Grid style={{ width: "99.6%" }} container>
           <Grid xs={12} item>
-            <Title>Relatório da {campaign.name || "Campanha"}</Title>
+            <Title>Laporan {campaign.name || "Kampanye"}</Title>
           </Grid>
         </Grid>
       </MainHeader>
       <Paper className={classes.mainPaper} variant="outlined">
         <Typography variant="h6" component="h2">
-          Status: {formatStatus(campaign.status)} {delivered} de {validContacts}
+          Status: {formatStatus(campaign.status)} {delivered} dari {validContacts}
         </Typography>
         <Grid spacing={2} container>
           <Grid xs={12} item>
@@ -166,19 +166,19 @@ const CampaignReport = () => {
             />
           </Grid>
           <Grid xs={12} md={4} item>
-            <CardCounter
-              icon={<GroupIcon fontSize="inherit" />}
-              title="Contatos Válidos"
-              value={validContacts}
-              loading={loading}
-            />
-          </Grid>
+          <CardCounter
+            icon={<GroupIcon fontSize="inherit" />}
+            title="Kontak yang Valid"
+            value={validContacts}
+            loading={loading}
+          />
+        </Grid>
           {campaign.confirmation && (
             <>
               <Grid xs={12} md={4} item>
                 <CardCounter
                   icon={<DoneIcon fontSize="inherit" />}
-                  title="Confirmações Solicitadas"
+                  title="Konfirmasi yang Diminta"
                   value={confirmationRequested}
                   loading={loading}
                 />
@@ -186,7 +186,7 @@ const CampaignReport = () => {
               <Grid xs={12} md={4} item>
                 <CardCounter
                   icon={<DoneAllIcon fontSize="inherit" />}
-                  title="Confirmações"
+                  title="Konfirmasi"
                   value={confirmed}
                   loading={loading}
                 />
@@ -196,7 +196,7 @@ const CampaignReport = () => {
           <Grid xs={12} md={4} item>
             <CardCounter
               icon={<CheckCircleIcon fontSize="inherit" />}
-              title="Entregues"
+              title="Terkirim"
               value={delivered}
               loading={loading}
             />
@@ -205,7 +205,7 @@ const CampaignReport = () => {
             <Grid xs={12} md={4} item>
               <CardCounter
                 icon={<WhatsAppIcon fontSize="inherit" />}
-                title="Conexão"
+                title="Koneksi"
                 value={campaign.whatsapp.name}
                 loading={loading}
               />
@@ -215,7 +215,7 @@ const CampaignReport = () => {
             <Grid xs={12} md={4} item>
               <CardCounter
                 icon={<ListAltIcon fontSize="inherit" />}
-                title="Lista de Contatos"
+                title="Daftar Kontak"
                 value={campaign.contactList.name}
                 loading={loading}
               />
@@ -224,7 +224,7 @@ const CampaignReport = () => {
           <Grid xs={12} md={4} item>
             <CardCounter
               icon={<ScheduleIcon fontSize="inherit" />}
-              title="Agendamento"
+              title="Penjadwalan"
               value={datetimeToClient(campaign.scheduledAt)}
               loading={loading}
             />
@@ -232,7 +232,7 @@ const CampaignReport = () => {
           <Grid xs={12} md={4} item>
             <CardCounter
               icon={<EventAvailableIcon fontSize="inherit" />}
-              title="Conclusão"
+              title="Kesimpulan"
               value={datetimeToClient(campaign.completedAt)}
               loading={loading}
             />

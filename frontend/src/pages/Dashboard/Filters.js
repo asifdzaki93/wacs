@@ -35,22 +35,22 @@ const Filters = ({
     return (
         <Grid item xs={12}>
             <Paper className={classes.customFixedHeightPaperLg} elevation={6}>
-                <Title>Filtros</Title>
+                <Title>Filter</Title>
                 <Grid container spacing={3}>
                     {/* <Grid item xs={12} sm={6} md={3}>
                         <FormControl fullWidth>
                             <InputLabel id="queue-label">
-                                Departamentos
+                                Departemen
                             </InputLabel>
                             <Select
                                 labelId="queue-label"
                                 id="queue-select"
                                 defaultValue={queueTicket}
-                                label="Departamentos"
+                                label="Departemen"
                                 onChange={(e) => setQueues(e.target.value)}
                             >
                                 <MenuItem value={false}>
-                                    Todos os Departamentos
+                                    Semua Departemen
                                 </MenuItem>
                                 {user.queues.map((queue) => (
                                     <MenuItem key={queue.id} value={queue.id}>
@@ -65,7 +65,7 @@ const Filters = ({
                         <TextField
                             fullWidth
                             name="dateStart"
-                            label="De"
+                            label="Dari"
                             InputLabelProps={{
                                 shrink: true,
                             }}
@@ -78,7 +78,7 @@ const Filters = ({
                         <TextField
                             fullWidth
                             name="dateEnd"
-                            label="Até"
+                            label="Sampai"
                             InputLabelProps={{
                                 shrink: true,
                             }}

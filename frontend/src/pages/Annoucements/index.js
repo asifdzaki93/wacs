@@ -24,7 +24,6 @@ import Title from "../../components/Title";
 
 import api from "../../services/api";
 import { i18n } from "../../translate/i18n";
-i18n.changeLanguage('id'); // Fungsi ini digunakan untuk mengubah bahasa aplikasi ke Bahasa Indonesia
 import TableRowSkeleton from "../../components/TableRowSkeleton";
 import AnnouncementModal from "../../components/AnnouncementModal";
 import ConfirmationModal from "../../components/ConfirmationModal";
@@ -33,6 +32,7 @@ import { Grid } from "@material-ui/core";
 import { isArray } from "lodash";
 import { SocketContext } from "../../context/Socket/SocketContext";
 import { AuthContext } from "../../context/Auth/AuthContext";
+
 
 const reducer = (state, action) => {
   if (action.type === "LOAD_ANNOUNCEMENTS") {

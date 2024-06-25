@@ -85,7 +85,7 @@ const Kanban = () => {
         label: "0",
         cards: filteredTickets.map(ticket => ({
           id: ticket.id.toString(),
-          label: "Tiket No " + ticket.id.toString(),
+          label: "Nomor Tiket " + ticket.id.toString(),
           description: (
               <div>
                 <p>
@@ -119,7 +119,7 @@ const Kanban = () => {
           label: tag.id.toString(),
           cards: filteredTickets.map(ticket => ({
             id: ticket.id.toString(),
-            label: "Tiket No " + ticket.id.toString(),
+            label: "Nomor Tiket " + ticket.id.toString(),
             description: (
               <div>
                 <p>

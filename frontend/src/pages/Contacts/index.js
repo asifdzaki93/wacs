@@ -319,7 +319,7 @@ const Contacts = () => {
 
          <CSVLink style={{ textDecoration:'none'}} separator=";" filename={'whaticket.csv'} data={contacts.map((contact) => ({ name: contact.name, number: contact.number, email: contact.email }))}>
           <Button	variant="contained" color="primary"> 
-          EXPORTAR CONTATOS 
+          EKSPOR KONTAK 
           </Button>
           </CSVLink>		  
 
