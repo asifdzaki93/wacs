@@ -76,7 +76,7 @@ function SchedulesForm(props) {
                       <Container>
                           <FastField
                             as={TextField}
-                            label="Hari dalam Seminggu"
+                            label="Hari"
                             name={`schedules[${index}].weekday`}
                             disabled
                             variant="outlined"

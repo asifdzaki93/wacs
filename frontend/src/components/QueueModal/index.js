@@ -103,13 +103,13 @@ const QueueModal = ({ open, onClose, queueId }) => {
   const [confirmationOpen, setConfirmationOpen] = useState(false);
 
   const [schedules, setSchedules] = useState([
-    { weekday: "Segunda-feira", weekdayEn: "monday", startTime: "08:00", endTime: "18:00", },
-    { weekday: "Terça-feira", weekdayEn: "tuesday", startTime: "08:00", endTime: "18:00", },
-    { weekday: "Quarta-feira", weekdayEn: "wednesday", startTime: "08:00", endTime: "18:00", },
-    { weekday: "Quinta-feira", weekdayEn: "thursday", startTime: "08:00", endTime: "18:00", },
-    { weekday: "Sexta-feira", weekdayEn: "friday", startTime: "08:00", endTime: "18:00", },
-    { weekday: "Sábado", weekdayEn: "saturday", startTime: "08:00", endTime: "12:00", },
-    { weekday: "Domingo", weekdayEn: "sunday", startTime: "00:00", endTime: "00:00", },
+    { weekday: "Senin", weekdayEn: "monday", startTime: "08:00", endTime: "18:00", },
+    { weekday: "Selasa", weekdayEn: "tuesday", startTime: "08:00", endTime: "18:00", },
+    { weekday: "Rabu", weekdayEn: "wednesday", startTime: "08:00", endTime: "18:00", },
+    { weekday: "Kamis", weekdayEn: "thursday", startTime: "08:00", endTime: "18:00", },
+    { weekday: "Jumat", weekdayEn: "friday", startTime: "08:00", endTime: "18:00", },
+    { weekday: "Sabtu", weekdayEn: "saturday", startTime: "08:00", endTime: "12:00", },
+    { weekday: "Minggu", weekdayEn: "sunday", startTime: "00:00", endTime: "00:00", },
   ]);
   const [selectedPrompt, setSelectedPrompt] = useState(null);
   const [prompts, setPrompts] = useState([]);
