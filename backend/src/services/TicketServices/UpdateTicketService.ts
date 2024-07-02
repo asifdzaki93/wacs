@@ -220,7 +220,7 @@ const UpdateTicketService = async ({
 
               const queue = await Queue.findByPk(queueId);
               const wbot = await GetTicketWbot(ticket);
-              const msgtxt = "*Pesan otomatis*:\nAnda telah dipindahkan ke departemen *" + queue?.name + "*\ntunggu sebentar, kami akan melayani Anda!";
+              const msgtxt = "*Pesan otomatis*:\nAnda telah dipindahkan ke Bagian *" + queue?.name + "*\ntunggu sebentar, kami akan melayani Anda!";
               const queueChangedMessage = await wbot.sendMessage(
                 `${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`,
                 {
