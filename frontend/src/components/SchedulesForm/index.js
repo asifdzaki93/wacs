@@ -34,13 +34,13 @@ function SchedulesForm(props) {
   const classes = useStyles();
 
   const [schedules, setSchedules] = useState([
-    { weekday: "Senin", weekdayEn: "monday", startTime: "", endTime: "", },
-    { weekday: "Selasa", weekdayEn: "tuesday", startTime: "", endTime: "", },
-    { weekday: "Rabu", weekdayEn: "wednesday", startTime: "", endTime: "", },
-    { weekday: "Kamis", weekdayEn: "thursday", startTime: "", endTime: "", },
-    { weekday: "Jumat", weekdayEn: "friday", startTime: "", endTime: "" },
-    { weekday: "Sabtu", weekdayEn: "saturday", startTime: "", endTime: "" },
-    { weekday: "Minggu", weekdayEn: "sunday", startTime: "", endTime: "" },
+    { weekday: "Senin", weekdayEn: "senin", startTime: "", endTime: "", },
+    { weekday: "Selasa", weekdayEn: "selasa", startTime: "", endTime: "", },
+    { weekday: "Rabu", weekdayEn: "rabu", startTime: "", endTime: "", },
+    { weekday: "Kamis", weekdayEn: "kamis", startTime: "", endTime: "", },
+    { weekday: "Jumat", weekdayEn: "jumat", startTime: "", endTime: "" },
+    { weekday: "Sabtu", weekdayEn: "sabtu", startTime: "", endTime: "" },
+    { weekday: "Minggu", weekdayEn: "minggu", startTime: "", endTime: "" },
   ]);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ function SchedulesForm(props) {
                       <Container>
                           <FastField
                             as={TextField}
-                            label="Dia da Semana"
+                            label="Hari"
                             name={`schedules[${index}].weekdayEn`}
                             disabled
                             variant="outlined"
