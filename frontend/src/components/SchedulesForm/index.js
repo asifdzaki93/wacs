@@ -77,7 +77,7 @@ function SchedulesForm(props) {
                           <FastField
                             as={TextField}
                             label="Hari"
-                            name={`schedules[${index}].weekday`}
+                            name={`schedules[${index}].weekdayEn`}
                             disabled
                             variant="outlined"
                             style={{ marginRight: "3.2%", width: "30%" }}
