@@ -53,32 +53,30 @@ const QrcodeModal = ({ open, onClose, whatsAppId }) => {
         <Paper elevation={0} style={{ display: "flex", alignItems: "center" }}>
           <div style={{ marginRight: "20px" }}>
             <Typography variant="h2" component="h2" color="textPrimary" gutterBottom style={{ fontFamily: "Montserrat", fontWeight: "bold", fontSize:"20px",}}>
-              Utilize o Whaticket com seu WhatsApp:
+              Gunakan Whaticket dengan WhatsApp Anda:
             </Typography>
             <Typography variant="body1" color="textPrimary" gutterBottom>
-              1 - Abra o WhatsApp no seu celular
+              1 - Buka WhatsApp di ponsel Anda
             </Typography>
             <Typography variant="body1" color="textPrimary" gutterBottom>
-              2 - Toque em Mais opções no Android <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg> ou em Configurações <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path></svg> no iPhone
+              2 - Ketuk Lebih banyak opsi di Android <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg> atau di Pengaturan <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path></svg> di iPhone
             </Typography>
             <Typography variant="body1" color="textPrimary" gutterBottom>
-              3 - Toque em Dispositivos conectados e, em seguida, em Conectar dispositivos
+              3 - Ketuk Perangkat terhubung dan, kemudian, Hubungkan perangkat
             </Typography>
             <Typography variant="body1" color="textPrimary" gutterBottom>
-              4 - Aponte seu celular para essa tela para capturar o QR Code
+              4 - Arahkan ponsel Anda ke layar ini untuk menangkap QR Code
             </Typography>
           </div>
           <div>
             {qrCode ? (
               <QRCode value={qrCode} size={256} />
             ) : (
-              <span>Waiting for QR Code</span>
+              <span>Tunggu QR Code</span>
             )}
           </div>
         </Paper>
       </DialogContent>
     </Dialog>
-  );
-};
 
 export default React.memo(QrcodeModal);
