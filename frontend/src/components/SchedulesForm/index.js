@@ -88,7 +88,7 @@ function SchedulesForm(props) {
                             >
                             {({ field }) => (
                               <NumberFormat
-                                label="Hora de Inicial"
+                                label="Jam Buka"
                                 {...field}
                                 variant="outlined"
                                 margin="dense"
@@ -103,7 +103,7 @@ function SchedulesForm(props) {
                             >
                             {({ field }) => (
                               <NumberFormat
-                                label="Hora de Final"
+                                label="Jam tutup"
                                 {...field}
                                 variant="outlined"
                                 margin="dense"
@@ -128,7 +128,7 @@ function SchedulesForm(props) {
               color="primary"
               variant="contained"
             >
-              {labelSaveButton ?? "Salvar"}
+              {labelSaveButton ?? "Save"}
             </ButtonWithSpinner>
           </div>
         </Form>
