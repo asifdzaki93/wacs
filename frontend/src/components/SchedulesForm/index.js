@@ -34,13 +34,13 @@ function SchedulesForm(props) {
   const classes = useStyles();
 
   const [schedules, setSchedules] = useState([
-    { weekday: "Senin", weekdayEn: "monday", startTime: "", endTime: "", },
-    { weekday: "Selasa", weekdayEn: "tuesday", startTime: "", endTime: "", },
-    { weekday: "Rabu", weekdayEn: "wednesday", startTime: "", endTime: "", },
-    { weekday: "Kamis", weekdayEn: "thursday", startTime: "", endTime: "", },
-    { weekday: "Jumat", weekdayEn: "friday", startTime: "", endTime: "" },
-    { weekday: "Sabtu", weekdayEn: "saturday", startTime: "", endTime: "" },
-    { weekday: "Minggu", weekdayEn: "sunday", startTime: "", endTime: "" },
+    { weekday: "Monday", weekdayEn: "monday", startTime: "", endTime: "", },
+    { weekday: "Tuesday", weekdayEn: "tuesday", startTime: "", endTime: "", },
+    { weekday: "Wednesday", weekdayEn: "wednesday", startTime: "", endTime: "", },
+    { weekday: "Thursday", weekdayEn: "thursday", startTime: "", endTime: "", },
+    { weekday: "Friday", weekdayEn: "friday", startTime: "", endTime: "" },
+    { weekday: "Saturday", weekdayEn: "saturday", startTime: "", endTime: "" },
+    { weekday: "Sunday", weekdayEn: "sunday", startTime: "", endTime: "" },
   ]);
 
   useEffect(() => {
