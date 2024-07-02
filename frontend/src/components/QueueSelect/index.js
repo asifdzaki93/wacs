@@ -97,7 +97,7 @@ const QueueSelect = ({ selectedQueueIds, onChange, multiple = true, title = i18n
 						)
 					}}
 				>
-					{!multiple && <MenuItem value={null}>Nenhum</MenuItem>}
+					{!multiple && <MenuItem value={null}>Tidak Ada</MenuItem>}
 					{queues.map(queue => (
 						<MenuItem key={queue.id} value={queue.id}>
 							{queue.name}

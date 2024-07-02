@@ -319,7 +319,7 @@ export default function AnnouncementsPopover() {
                 </ListItem>
               ))}
             {isArray(announcements) && announcements.length === 0 && (
-              <ListItemText primary="Nenhum registro" />
+              <ListItemText primary="Tidak ada catatan" />
             )}
           </List>
         </Paper>
