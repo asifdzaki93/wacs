@@ -60,7 +60,14 @@ var defaultMessages = {
   noEventsInRange: "Tidak ada jadwal dalam periode ini.",
   showMore: function showMore(total) {
     return "+" + total + " lagi";
-  }
+  },
+  sunday: "Minggu",
+  monday: "Senin",
+  tuesday: "Selasa",
+  wednesday: "Rabu",
+  thursday: "Kamis",
+  friday: "Jumat",
+  saturday: "Sabtu"
 };
 
 const reducer = (state, action) => {
