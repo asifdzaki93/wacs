@@ -34,13 +34,13 @@ function SchedulesForm(props) {
   const classes = useStyles();
 
   const [schedules, setSchedules] = useState([
-    { weekday: "Senin", weekdayEn: "Senin", startTime: "", endTime: "", },
-    { weekday: "Selasa", weekdayEn: "Selasa", startTime: "", endTime: "", },
-    { weekday: "Rabu", weekdayEn: "Rabu", startTime: "", endTime: "", },
-    { weekday: "Kamis", weekdayEn: "Kamis", startTime: "", endTime: "", },
-    { weekday: "Jumat", weekdayEn: "Jumat", startTime: "", endTime: "" },
-    { weekday: "Sabtu", weekdayEn: "Sabtu", startTime: "", endTime: "" },
-    { weekday: "Minggu", weekdayEn: "Minggu", startTime: "", endTime: "" },
+    { weekday: "Senin", weekdayEn: "monday", startTime: "", endTime: "", },
+    { weekday: "Selasa", weekdayEn: "tuesday", startTime: "", endTime: "", },
+    { weekday: "Rabu", weekdayEn: "wednesday", startTime: "", endTime: "", },
+    { weekday: "Kamis", weekdayEn: "thursday", startTime: "", endTime: "", },
+    { weekday: "Jumat", weekdayEn: "friday", startTime: "", endTime: "" },
+    { weekday: "Sabtu", weekdayEn: "saturday", startTime: "", endTime: "" },
+    { weekday: "Minggu", weekdayEn: "sunday", startTime: "", endTime: "" },
   ]);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ function SchedulesForm(props) {
                       <Container>
                           <FastField
                             as={TextField}
-                            label="Hari"
+                            label="Dia da Semana"
                             name={`schedules[${index}].weekdayEn`}
                             disabled
                             variant="outlined"
@@ -88,7 +88,7 @@ function SchedulesForm(props) {
                             >
                             {({ field }) => (
                               <NumberFormat
-                                label="Jam Buka"
+                                label="Hora de Inicial"
                                 {...field}
                                 variant="outlined"
                                 margin="dense"
@@ -103,7 +103,7 @@ function SchedulesForm(props) {
                             >
                             {({ field }) => (
                               <NumberFormat
-                                label="Jam Tutup"
+                                label="Hora de Final"
                                 {...field}
                                 variant="outlined"
                                 margin="dense"
@@ -128,7 +128,7 @@ function SchedulesForm(props) {
               color="primary"
               variant="contained"
             >
-              {labelSaveButton ?? "Save"}
+              {labelSaveButton ?? "Salvar"}
             </ButtonWithSpinner>
           </div>
         </Form>
