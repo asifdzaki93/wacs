@@ -19,17 +19,20 @@ export async function ImportContacts(
     let number = "";
     let email = "";
 
-    if (has(row, "nome") || has(row, "Nome")) {
-      name = row["nome"] || row["Nome"];
+    if (has(row, "nome") || has(row, "Nome") || has(row, "Nama") || has(row, "NAMA") || has(row, "nama")) {
+      name = row["nome"] || row["Nome"] || row["Nama"] || row["NAMA"] || row["nama"];
     }
 
     if (
       has(row, "numero") ||
       has(row, "número") ||
       has(row, "Numero") ||
-      has(row, "Número")
+      has(row, "Número") ||
+      has(row, "Nomor") ||
+      has(row, "NOMOR") ||
+      has(row, "nomor")
     ) {
-      number = row["numero"] || row["número"] || row["Numero"] || row["Número"];
+      number = row["numero"] || row["número"] || row["Numero"] || row["Número"] || row["Nomor"] || row["NOMOR"] || row["nomor"];
       number = `${number}`.replace(/\D/g, "");
     }
 
@@ -37,9 +40,10 @@ export async function ImportContacts(
       has(row, "email") ||
       has(row, "e-mail") ||
       has(row, "Email") ||
-      has(row, "E-mail")
+      has(row, "E-mail") ||
+      has(row, "EMAIL")
     ) {
-      email = row["email"] || row["e-mail"] || row["Email"] || row["E-mail"];
+      email = row["email"] || row["e-mail"] || row["Email"] || row["E-mail"] || row["EMAIL"];
     }
 
     return { name, number, email, contactListId, companyId };
