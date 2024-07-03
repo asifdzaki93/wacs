@@ -36,7 +36,6 @@ import Subscription from "../pages/Subscription/";
 import Files from "../pages/Files/";
 import Prompts from "../pages/Prompts";
 import QueueIntegration from "../pages/QueueIntegration";
-import QueueIntegration from "../pages/Pemesanan";
 import ForgetPassword from "../pages/ForgetPassWord/"; // Reset PassWd
 
 const Routes = () => {
@@ -166,12 +165,6 @@ const Routes = () => {
                     <Route
                       exact
                       path="/campaigns-config"
-                      component={CampaignsConfig}
-                      isPrivate
-                    />
-                    <Route
-                      exact
-                      path="/pemesanan"
                       component={CampaignsConfig}
                       isPrivate
                     />

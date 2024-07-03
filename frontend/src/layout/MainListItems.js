@@ -17,7 +17,6 @@ import AccountTreeOutlinedIcon from "@material-ui/icons/AccountTreeOutlined";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import CodeRoundedIcon from "@material-ui/icons/CodeRounded";
-import CodeRoundedIcon from "@material-ui/icons/LocalAtmIcon";
 import EventIcon from "@material-ui/icons/Event";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
@@ -313,15 +312,9 @@ const MainListItems = (props) => {
 
 
       <ListItemLink
-        to="/Pemesanan"
-        primary={i18n.t("mainDrawer.listItems.quickMessages")}
-        icon={<FlashOnIcon />}
-      />
-
-      <ListItemLink
         to="/quick-messages"
         primary={i18n.t("mainDrawer.listItems.quickMessages")}
-        icon={<LocalAtmIcon />}
+        icon={<FlashOnIcon />}
       />
 	  
 	  <ListItemLink

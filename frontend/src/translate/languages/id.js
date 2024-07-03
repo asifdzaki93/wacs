@@ -699,7 +699,7 @@ const messages = {
 				title: "Pengumuman",
 				searchPlaceholder: "Cari",
 				buttons: {
-					add: "Buat",
+					add: "Pengumuman Baru",
 					contactLists: "Daftar Kontak",
 				},
 				table: {
