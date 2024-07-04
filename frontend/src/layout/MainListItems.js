@@ -20,7 +20,7 @@ import CodeRoundedIcon from "@material-ui/icons/CodeRounded";
 import EventIcon from "@material-ui/icons/Event";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
-import StorefrontIcon from '@mui/icons-material/Storefront';
+import StoreIcon from "@material-ui/icons/Store";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import PeopleIcon from "@material-ui/icons/People";
@@ -316,7 +316,7 @@ const MainListItems = (props) => {
     <ListItemLink
         to="/pemesanan"
         primary="Pemesanan"
-        icon={<StorefrontIcon />}
+        icon={<StoreIcon />}
       />
 
       <ListItemLink
