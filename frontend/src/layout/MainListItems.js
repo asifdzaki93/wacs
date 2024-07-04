@@ -314,7 +314,7 @@ const MainListItems = (props) => {
 
     <ListItemLink
         to="/quick-messages"
-        primary={Pemesanan}
+        primary={"Pemesanan"}
         icon={<Event />}
       />
 
