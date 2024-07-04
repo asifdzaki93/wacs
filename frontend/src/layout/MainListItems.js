@@ -27,6 +27,7 @@ import ListIcon from "@material-ui/icons/ListAlt";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
 import ForumIcon from "@material-ui/icons/Forum";
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
+import LocalAtmIcon from '@material-ui/icons/AttachMoneyIcon';
 import RotateRight from "@material-ui/icons/RotateRight";
 import { i18n } from "../translate/i18n";
 import { WhatsAppsContext } from "../context/WhatsApp/WhatsAppsContext";
@@ -313,6 +314,12 @@ const MainListItems = (props) => {
 
       <ListItemLink
         to="/quick-messages"
+        primary={Pemesanan}
+        icon={<AttachMoneyIcon />}
+      />
+
+      <ListItemLink
+        to="/quick-messages"
         primary={i18n.t("mainDrawer.listItems.quickMessages")}
         icon={<FlashOnIcon />}
       />
@@ -374,7 +381,7 @@ const MainListItems = (props) => {
               }}
               inset
               color="inherit">
-              {"Kampanye"}
+              {"Broadcast"}
             </ListSubheader>
 			
             {showCampaigns && (
@@ -385,12 +392,6 @@ const MainListItems = (props) => {
                       <EventAvailableIcon />
                     </ListItemIcon>
                     <ListItemText primary={i18n.t("mainDrawer.listItems.campaigns")} />
-                  </ListItem>
-                  <ListItem onClick={() => history.push("/campaigns")} button>
-                    <ListItemIcon>
-                      <ListIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="List" />
                   </ListItem>
                   <ListItem onClick={() => history.push("/contact-lists")} button>
                     <ListItemIcon>
