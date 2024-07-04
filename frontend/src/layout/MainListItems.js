@@ -362,6 +362,51 @@ const MainListItems = (props) => {
         perform="drawer-admin-items:view"
         yes={() => (
           <>
+
+<Divider />
+            <ListSubheader
+              hidden={collapsed}
+              style={{
+                position: "relative",
+                fontSize: "17px",
+                textAlign: "left",
+                paddingLeft: 20
+              }}
+              inset
+              color="inherit">
+              {"Kampanye"}
+            </ListSubheader>
+			
+            {showCampaigns && (
+              <>
+                <List component="div" disablePadding>
+                  <ListItem onClick={() => history.push("/campaigns")} button>
+                    <ListItemIcon>
+                      <EventAvailableIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={i18n.t("mainDrawer.listItems.campaigns")} />
+                  </ListItem>
+                  <ListItem onClick={() => history.push("/campaigns")} button>
+                    <ListItemIcon>
+                      <ListIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="List" />
+                  </ListItem>
+                  <ListItem onClick={() => history.push("/contact-lists")} button>
+                    <ListItemIcon>
+                      <PeopleIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Phone Book" />
+                  </ListItem>
+                  <ListItem onClick={() => history.push("/campaigns-config")} button>
+                    <ListItemIcon>
+                      <SettingsOutlinedIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Konfigurasi" />
+                  </ListItem>
+                </List>
+              </>
+            )}
             <Divider />
             <ListSubheader
               hidden={collapsed}
@@ -375,62 +420,7 @@ const MainListItems = (props) => {
               color="inherit">
               {i18n.t("mainDrawer.listItems.administration")}
             </ListSubheader>
-			
-            {showCampaigns && (
-              <>
 
-          <ListItem 
-          button 
-          onClick={(e) => {e.preventDefault(); setOpenCampaignSubmenu((prev) => !prev);}}
-          >
-
-                  <ListItemIcon>
-                    <EventAvailableIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={i18n.t("mainDrawer.listItems.campaigns")}
-                  />
-                  {openCampaignSubmenu ? (
-                    <ExpandLessIcon />
-                  ) : (
-                    <ExpandMoreIcon />
-                  )}
-                </ListItem>
-                <Collapse
-                  style={{ paddingLeft: 15 }}
-                  in={openCampaignSubmenu}
-                  timeout="auto"
-                  unmountOnExit
-                >
-                  <List component="div" disablePadding>
-                    <ListItem onClick={() => history.push("/campaigns")} button>
-                      <ListItemIcon>
-                        <ListIcon />
-                      </ListItemIcon>
-                      <ListItemText primary="List" />
-                    </ListItem>
-                    <ListItem
-                      onClick={() => history.push("/contact-lists")}
-                      button
-                    >
-                      <ListItemIcon>
-                        <PeopleIcon />
-                      </ListItemIcon>
-                      <ListItemText primary="Phone Book" />
-                    </ListItem>
-                    <ListItem
-                      onClick={() => history.push("/campaigns-config")}
-                      button
-                    >
-                      <ListItemIcon>
-                        <SettingsOutlinedIcon />
-                      </ListItemIcon>
-                      <ListItemText primary="Konfigurasi" />
-                    </ListItem>
-                  </List>
-                </Collapse>
-              </>
-            )}
             {user.super && (
               <ListItemLink
                 to="/announcements"
