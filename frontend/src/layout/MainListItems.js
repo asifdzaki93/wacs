@@ -370,7 +370,11 @@ const MainListItems = (props) => {
         yes={() => (
           <>
 
-<Divider />
+
+			
+            {showCampaigns && (
+              <>
+              <Divider />
             <ListSubheader
               hidden={collapsed}
               style={{
@@ -383,9 +387,6 @@ const MainListItems = (props) => {
               color="inherit">
               {"Broadcast"}
             </ListSubheader>
-			
-            {showCampaigns && (
-              <>
                 <List component="div" disablePadding>
                   <ListItem onClick={() => history.push("/campaigns")} button>
                     <ListItemIcon>
