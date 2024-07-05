@@ -5,6 +5,8 @@ import { AuthContext } from "../../context/Auth/AuthContext"; // Sesuaikan path
 import { toast } from "react-toastify";
 import { i18n } from "../../translate/i18n"; // Jika menggunakan i18n
 
+import InvoiceForm from "./components/Pemesanan/InvoiceForm";
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -35,12 +37,7 @@ const Pemesanan = () => {
 
   return (
     <div className={classes.root}>
-      <h1>Pemesanan</h1>
-      <ul>
-        {data.map(item => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+<InvoiceForm />
     </div>
   );
 };
