@@ -8,8 +8,11 @@ import Card from "react-bootstrap/Card";
 import InvoiceItem from "./InvoiceItem";
 import InvoiceModal from "./InvoiceModal";
 import InputGroup from "react-bootstrap/InputGroup";
+import { AuthContext } from "../../context/Auth/AuthContext";
+
 
 const InvoiceForm = () => {
+  const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [currency, setCurrency] = useState("Rp");
   const [currentDate, setCurrentDate] = useState(
