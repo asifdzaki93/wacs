@@ -35,6 +35,7 @@ import Chat from "../pages/Chat";
 import ToDoList from "../pages/ToDoList/";
 import Subscription from "../pages/Subscription/";
 import Files from "../pages/Files/";
+import Kasir from "../pages/Kasir/";
 import Prompts from "../pages/Prompts";
 import QueueIntegration from "../pages/QueueIntegration";
 import ForgetPassword from "../pages/ForgetPassWord/"; // Reset PassWd
@@ -83,6 +84,12 @@ const Routes = () => {
                   exact
                   path="/todolist"
                   component={ToDoList}
+                  isPrivate
+                  />
+                <Route
+                  exact
+                  path="/kasir"
+                  component={Kasir}
                   isPrivate
                   />
                 <Route
