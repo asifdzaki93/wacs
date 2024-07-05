@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import api from "../../services/api"; // Sesuaikan path ini
-import { AuthContext } from "../../context/Auth/AuthContext"; // Sesuaikan path
+import api from "../../services/api";
+import { AuthContext } from "../../context/Auth/AuthContext";
 import { toast } from "react-toastify";
-import { i18n } from "../../translate/i18n"; // Jika menggunakan i18n
-
+import InvoiceForm from "../../components/Pemesanan/InvoiceForm"; // Sesuaikan path jika diperlukan
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -35,12 +34,7 @@ const Pemesanan = () => {
 
   return (
     <div className={classes.root}>
-      <h1>Pemesanan</h1>
-      <ul>
-        {data.map(item => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+      <InvoiceForm />
     </div>
   );
 };
