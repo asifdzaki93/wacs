@@ -1,41 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
+import api from "../../services/api"; // Sesuaikan path ini
+import { AuthContext } from "../../context/Auth/AuthContext"; // Sesuaikan path
+import { toast } from "react-toastify";
+import { i18n } from "../../translate/i18n"; // Jika menggunakan i18n
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+    backgroundColor: theme.palette.background.default,
   },
-});
+}));
 
 const Pemesanan = () => {
   const classes = useStyles();
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Fetch data dari API
+    const fetchData = async () => {
+      try {
+        const response = await api.get("/pemesanan"); // Sesuaikan endpoint API
+        setData(response.data);
+      } catch (error) {
+        console.log(error);
+        toast.error("Error fetching data");
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
-    <div>
-      <h1>Dashboard Pemesanan</h1>
-      <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>No.</TableCell>
-              <TableCell align="right">Nama Pemesan</TableCell>
-              <TableCell align="right">Tanggal Pemesanan</TableCell>
-              <TableCell align="right">Total Harga</TableCell>
-              <TableCell align="right">Status</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {/* Data pemesanan akan ditampilkan di sini */}
-          </TableBody>
-        </Table>
-      </TableContainer>
+    <div className={classes.root}>
+      <h1>Pemesanan</h1>
+      <ul>
+        {data.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };
