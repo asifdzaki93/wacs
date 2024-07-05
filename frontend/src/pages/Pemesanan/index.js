@@ -4,14 +4,13 @@ import api from "../../services/api";
 import { AuthContext } from "../../context/Auth/AuthContext";
 import { toast } from "react-toastify";
 import InvoiceForm from "../../components/Pemesanan/InvoiceForm"; // Sesuaikan path jika diperlukan
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
-    height: "100vh",
-    backgroundColor: theme.palette.background.default,
-  },
+    padding: theme.spacing(1),
+  }  
 }));
 
 const Pemesanan = () => {
