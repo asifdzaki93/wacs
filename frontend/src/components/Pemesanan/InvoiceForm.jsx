@@ -311,8 +311,8 @@ const InvoiceForm = () => {
                 className="btn btn-light my-1"
                 aria-label="Change Currency"
               >
-                <option value="$">USD (Dolar Amerika Serikat)</option>
                 <option value="Rp">IDR (Rupiah Indonesia)</option>
+                <option value="$">USD (Dolar Amerika Serikat)</option>
               </Form.Select>
             </Form.Group>
             <Form.Group className="my-3">
@@ -326,7 +326,7 @@ const InvoiceForm = () => {
                   className="bg-white border"
                   placeholder="0.0"
                   min="0.00"
-                  step="0.01"
+                  step="100.00"
                   max="100.00"
                 />
                 <InputGroup.Text className="bg-light fw-bold text-secondary small">
