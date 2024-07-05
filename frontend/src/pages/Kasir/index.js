@@ -34,7 +34,7 @@ const Kasir = () => {
           <Button variant="contained" color="primary" style={{ marginTop: '10px' }}>
             Buat
           </Button>
-          <Table className={classes.table} aria-label="simple table">
+          <Table className={classes.table} size="small" aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>Penjualan ID</TableCell>
