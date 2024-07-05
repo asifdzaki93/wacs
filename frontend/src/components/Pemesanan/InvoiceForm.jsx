@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useContext, useEffect, useCallback } from "react";
 import { AuthContext } from "../../context/Auth/AuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
@@ -17,6 +17,7 @@ const InvoiceForm = () => {
   const [currentDate, setCurrentDate] = useState(
     new Date().toLocaleDateString()
   );
+  const { dateToClient } = useDate();
   const [invoiceNumber, setInvoiceNumber] = useState(1);
   const [dateOfIssue, setDateOfIssue] = useState("");
   const [billTo, setBillTo] = useState("");
