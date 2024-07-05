@@ -4,15 +4,16 @@ import api from "../../services/api";
 import { AuthContext } from "../../context/Auth/AuthContext";
 import { toast } from "react-toastify";
 import InvoiceForm from "../../components/Pemesanan/InvoiceForm"; // Sesuaikan path jika diperlukan
+import { Container } from "@material-ui/core"; // Tambahkan import Container dari Material-UI
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex",
-    alignItems: "center",
-    padding: theme.spacing(1),
-    maxWidth: "calc(100vw - 20px)", // Mengurangi 20px untuk memberikan sedikit ruang tepi
-    boxSizing: "border-box", // Padding dihitung sebagai bagian dari lebar elemen
-  }  
+
+  container: {
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.padding,
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(2),
+  }
 }));
 
 const Pemesanan = () => {
@@ -34,9 +35,13 @@ const Pemesanan = () => {
   }, []);
 
   return (
-    <div className={classes.root}>
+    <div>
+    <Container maxWidth="lg" className={classes.container}>
+
       <InvoiceForm />
-    </div>
+
+    </Container >
+    </div >
   );
 };
 
