@@ -8,7 +8,13 @@ import Modal from "react-bootstrap/Modal";
 import { BiCloudDownload } from "react-icons/bi";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: "flex",
+    alignItems: "center",
+    padding: theme.spacing(1),
+  }  
+}));
 const GenerateInvoice = () => {
   html2canvas(document.querySelector("#invoiceCapture")).then((canvas) => {
     const imgData = canvas.toDataURL("image/png", 1.0);
@@ -37,8 +43,9 @@ const InvoiceModal = ({
   discountAmount,
   subTotal,
 }) => {
+  const classes = useStyles(); // Tambahkan ini untuk menggunakan useStyles
   return (
-    <div>
+    <div className={classes.root}> // Ubah ini untuk menggunakan classes.root
       <Modal show={showModal} onHide={closeModal} size="lg" centered>
         <div id="invoiceCapture">
           <div className="d-flex flex-row justify-content-between align-items-start bg-light w-100 p-4">
