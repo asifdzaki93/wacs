@@ -12,7 +12,6 @@ import { AuthContext } from "../../context/Auth/AuthContext";
 
 
 const InvoiceForm = () => {
-  const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [currency, setCurrency] = useState("Rp");
   const [currentDate, setCurrentDate] = useState(
@@ -35,6 +34,7 @@ const InvoiceForm = () => {
   const [taxAmount, setTaxAmount] = useState("0.00");
   const [discountRate, setDiscountRate] = useState("");
   const [discountAmount, setDiscountAmount] = useState("0.00");
+  const { user } = useContext(AuthContext);
 
   const [items, setItems] = useState([
     {
