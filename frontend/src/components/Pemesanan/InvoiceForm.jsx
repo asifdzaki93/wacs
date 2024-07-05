@@ -119,6 +119,15 @@ const InvoiceForm = () => {
             <div className="d-flex flex-row align-items-start justify-content-between mb-3">
               <div className="d-flex flex-column">
                 <div className="d-flex flex-column">
+                {user?.profile === "admin" && user?.company?.dueDate ? (
+              <>
+                Halo <b>{user.name}</b>, Selamat datang di <b>{user?.company?.name}</b>! (Aktif hingga {dateToClient(user?.company?.dueDate)})
+              </>
+            ) : (
+              <>
+                Halo <b>{user.name}</b>, Selamat datang di <b>{user?.company?.name}</b>!
+              </>
+            )}
                   <div className="mb-2">
                     <span className="fw-bold">Tanggal&nbsp;Sekarang:&nbsp;</span>
                     <span className="current-date">{currentDate}</span>
