@@ -1,6 +1,9 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, TextField, Button, Table, TableBody, TableCell, TableHead, TableRow, IconButton } from "@material-ui/core"; // Tambahkan import Container, TextField, Button, Table, TableBody, TableCell, TableHead, TableRow, IconButton dari Material-UI
+import ViewIcon from "@material-ui/icons/Visibility"; // Tambahkan import ViewIcon
+import EditIcon from "@material-ui/icons/Edit"; // Tambahkan import EditIcon
+import DeleteIcon from "@material-ui/icons/Delete"; // Tambahkan import DeleteIcon
 
 const useStyles = makeStyles(theme => ({
     container: {
