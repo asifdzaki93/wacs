@@ -388,26 +388,9 @@ const MainListItems = (props) => {
               color="inherit">
               {"Broadcast"}
             </ListSubheader>
-                <List component="div" disablePadding>
-                  <ListItem onClick={() => history.push("/campaigns")} button>
-                    <ListItemIcon>
-                      <EventAvailableIcon />
-                    </ListItemIcon>
-                    <ListItemText primary={i18n.t("mainDrawer.listItems.campaigns")} />
-                  </ListItem>
-                  <ListItem onClick={() => history.push("/contact-lists")} button>
-                    <ListItemIcon>
-                      <PeopleIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Phone Book" />
-                  </ListItem>
-                  <ListItem onClick={() => history.push("/campaigns-config")} button>
-                    <ListItemIcon>
-                      <SettingsOutlinedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Konfigurasi" />
-                  </ListItem>
-                </List>
+                  <ListItemLink to="/campaigns" primary={i18n.t("mainDrawer.listItems.campaigns")} icon={<EventAvailableIcon />} />
+                  <ListItemLink to="/contact-lists" primary="Phone Book" icon={<PeopleIcon />} />
+                  <ListItemLink to="/campaigns-config" primary="Konfigurasi" icon={<SettingsOutlinedIcon />} />
               </>
             )}
             <Divider />
