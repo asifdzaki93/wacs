@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import Modal from "react-bootstrap/Modal";
 import { BiCloudDownload } from "react-icons/bi";
+import SendIcon from "@material-ui/icons/Send";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
@@ -161,7 +162,19 @@ const InvoiceModal = ({
         </div>
         <div className="pb-4 px-4">
           <Row>
-            <Col md={6}></Col>
+            <Col md={6}>
+            <Button
+                variant="outline-primary"
+                className="d-block w-100 mt-3 mt-md-0"
+                onClick={GenerateInvoice}
+              >
+                <BiCloudDownload
+                  style={{ width: "16px", height: "16px", marginTop: "-3px" }}
+                  className="me-2"
+                />
+                Unduh Salinan
+              </Button>            
+            </Col>
             <Col md={6}>
               <Button
                 variant="outline-primary"

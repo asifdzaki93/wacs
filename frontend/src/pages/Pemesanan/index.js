@@ -5,6 +5,9 @@ import { AuthContext } from "../../context/Auth/AuthContext";
 import { toast } from "react-toastify";
 import InvoiceForm from "../../components/Pemesanan/InvoiceForm"; // Sesuaikan path jika diperlukan
 import { Container } from "@material-ui/core"; // Tambahkan import Container dari Material-UI
+import NewTicketModal from "../../components/NewTicketModal";
+
+
 
 const useStyles = makeStyles(theme => ({
 
@@ -37,7 +40,13 @@ const Pemesanan = () => {
   return (
     <div>
     <Container maxWidth="lg" className={classes.container}>
-
+    <NewTicketModal
+        modalOpen={newTicketModalOpen}
+        onClose={(ticket) => {
+          
+          handleCloseOrOpenTicket(ticket);
+        }}
+      />
       <InvoiceForm />
 
     </Container >
