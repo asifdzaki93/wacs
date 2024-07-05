@@ -28,7 +28,6 @@ const InvoiceForm = () => {
   const [billFrom, setBillFrom] = useState("");
   const [billFromEmail, setBillFromEmail] = useState("");
   const [billFromAddress, setBillFromAddress] = useState("");
-  const [notes, setNotes] = useState(`Saya ${user.name}, mengucapkan : Terima kasih telah mempercayakan kepada ${user?.company?.name}. Semoga hari Anda menyenangkan!`);
   const [total, setTotal] = useState("0.00");
   const [subTotal, setSubTotal] = useState("0.00");
   const [taxRate, setTaxRate] = useState("");
@@ -114,6 +113,7 @@ const InvoiceForm = () => {
   const closeModal = () => {
     setIsOpen(false);
   };
+  const [notes, setNotes] = useState(`Saya ${user.name}, mengucapkan : Terima kasih telah mempercayakan kepada ${user?.company?.name}. Semoga hari Anda menyenangkan!`);
 
   return (
     <Form onSubmit={openModal}>
@@ -272,7 +272,7 @@ const InvoiceForm = () => {
             <hr className="my-4" />
             <Form.Label className="fw-bold">Catatan:</Form.Label>
             <Form.Control
-              placeholder={`Halo ${user.name}, Selamat datang di ${user?.company?.name}! Terima kasih telah berbisnis dengan ${user?.company?.name}. Semoga hari Anda menyenangkan! (${user.name})`}
+              placeholder={`hhhh`}
               name="notes"
               value={notes}
               onChange={handleChange(setNotes)}
