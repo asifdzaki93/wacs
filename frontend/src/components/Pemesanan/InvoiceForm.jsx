@@ -125,16 +125,7 @@ const InvoiceForm = () => {
             <div className="d-flex flex-row align-items-start justify-content-between mb-3">
               <div className="d-flex flex-column">
                 <div className="d-flex flex-column">
-                {user?.profile === "admin" && user?.company?.dueDate ? (
-              <>
-                Halo <b>{user.name}</b>, Selamat datang di <b>{user?.company?.name}</b>! (Aktif hingga {dateToClient(user?.company?.dueDate)})
-              </>
-            ) : (
-              <>
-                Halo <b>{user.name}</b>, Selamat datang di <b>{user?.company?.name}</b>!
-              </>
-            )}
-                  <div className="mb-2">
+                                  <div className="mb-2">
                     <span className="fw-bold">Tanggal&nbsp;Sekarang:&nbsp;</span>
                     <span className="current-date">{currentDate}</span>
                   </div>
@@ -283,7 +274,7 @@ const InvoiceForm = () => {
             <hr className="my-4" />
             <Form.Label className="fw-bold">Catatan:</Form.Label>
             <Form.Control
-              placeholder="Terima kasih telah berbisnis dengan kami. Semoga hari Anda menyenangkan!"
+              placeholder={`Halo ${user.name}, Selamat datang di ${user?.company?.name}! Terima kasih telah berbisnis dengan ${user?.company?.name}. Semoga hari Anda menyenangkan! (${user.name})`}
               name="notes"
               value={notes}
               onChange={handleChange(setNotes)}
