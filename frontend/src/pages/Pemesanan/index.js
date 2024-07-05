@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     padding: theme.spacing(1),
     maxWidth: "calc(100vw - 20px)", // Mengurangi 20px untuk memberikan sedikit ruang tepi
+    boxSizing: "border-box", // Padding dihitung sebagai bagian dari lebar elemen
   }  
 }));
 
