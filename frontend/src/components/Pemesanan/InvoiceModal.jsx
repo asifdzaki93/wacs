@@ -47,11 +47,11 @@ const InvoiceModal = ({
                 {info.billFrom || "John Uberbacher"}
               </h4>
               <h6 className="fw-bold text-secondary mb-1">
-                Invoice Number: {info.invoiceNumber || ""}
+                Nomor Faktur: {info.invoiceNumber || ""}
               </h6>
             </div>
             <div className="text-end ms-4">
-              <h6 className="fw-bold mt-1 mb-2">Amount&nbsp;Due:</h6>
+              <h6 className="fw-bold mt-1 mb-2">Jumlah Tagihan:</h6>
               <h5 className="fw-bold text-secondary">
                 {" "}
                 {currency} {total}
@@ -61,19 +61,19 @@ const InvoiceModal = ({
           <div className="p-4">
             <Row className="mb-4">
               <Col md={4}>
-                <div className="fw-bold">Billed From:</div>
+                <div className="fw-bold">Dari:</div>
                 <div>{info.billFrom || ""}</div>
                 <div>{info.billFromAddress || ""}</div>
                 <div>{info.billFromEmail || ""}</div>
               </Col>
               <Col md={4}>
-                <div className="fw-bold">Billed to:</div>
+                <div className="fw-bold">Kepada:</div>
                 <div>{info.billTo || ""}</div>
                 <div>{info.billToAddress || ""}</div>
                 <div>{info.billToEmail || ""}</div>
               </Col>
               <Col md={4}>
-                <div className="fw-bold mt-2">Date Of Issue:</div>
+                <div className="fw-bold mt-2">Tanggal Dikeluarkan:</div>
                 <div>{info.dateOfIssue || ""}</div>
               </Col>
             </Row>
@@ -81,9 +81,9 @@ const InvoiceModal = ({
               <thead>
                 <tr>
                   <th>QTY</th>
-                  <th>DESCRIPTION</th>
-                  <th className="text-end">PRICE</th>
-                  <th className="text-end">AMOUNT</th>
+                  <th>DESKRIPSI</th>
+                  <th className="text-end">HARGA</th>
+                  <th className="text-end">JUMLAH</th>
                 </tr>
               </thead>
               <tbody>
@@ -125,7 +125,7 @@ const InvoiceModal = ({
                   <tr className="text-end">
                     <td></td>
                     <td className="fw-bold" style={{ width: "100px" }}>
-                      TAX
+                      PAJAK
                     </td>
                     <td className="text-end" style={{ width: "100px" }}>
                       {currency} {taxAmount}
@@ -136,7 +136,7 @@ const InvoiceModal = ({
                   <tr className="text-end">
                     <td></td>
                     <td className="fw-bold" style={{ width: "100px" }}>
-                      DISCOUNT
+                      DISKON
                     </td>
                     <td className="text-end" style={{ width: "100px" }}>
                       {currency} {discountAmount}
@@ -172,7 +172,7 @@ const InvoiceModal = ({
                   style={{ width: "16px", height: "16px", marginTop: "-3px" }}
                   className="me-2"
                 />
-                Download Copy
+                Unduh Salinan
               </Button>
             </Col>
           </Row>

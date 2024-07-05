@@ -18,9 +18,9 @@ const InvoiceItem = ({
         <thead>
           <tr>
             <th>ITEM</th>
-            <th>QTY</th>
-            <th>PRICE/RATE</th>
-            <th className="text-center">ACTION</th>
+            <th>JUMLAH</th>
+            <th>HARGA/TARIF</th>
+            <th className="text-center">AKSI</th>
           </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@ const InvoiceItem = ({
         </tbody>
       </Table>
       <Button className="fw-bold btn-secondary" onClick={onRowAdd}>
-        Add Item
+        Tambah Item
       </Button>
     </div>
   );
@@ -55,7 +55,7 @@ const ItemRow = ({ item, onItemizedItemEdit, onDelEvent, currency }) => {
           cellData={{
             type: "text",
             name: "name",
-            placeholder: "Item name",
+            placeholder: "Nama item",
             value: item.name,
             id: item.id,
           }}
@@ -65,7 +65,7 @@ const ItemRow = ({ item, onItemizedItemEdit, onDelEvent, currency }) => {
           cellData={{
             type: "text",
             name: "description",
-            placeholder: "Item description",
+            placeholder: "Deskripsi item",
             value: item.description,
             id: item.id,
           }}

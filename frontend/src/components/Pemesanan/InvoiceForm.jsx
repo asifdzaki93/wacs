@@ -24,7 +24,7 @@ const InvoiceForm = () => {
   const [billFromEmail, setBillFromEmail] = useState("");
   const [billFromAddress, setBillFromAddress] = useState("");
   const [notes, setNotes] = useState(
-    "Thank you for doing business with us. Have a great day!"
+    "Terima kasih telah berbisnis dengan kami. Semoga hari Anda menyenangkan!"
   );
   const [total, setTotal] = useState("0.00");
   const [subTotal, setSubTotal] = useState("0.00");
@@ -120,12 +120,12 @@ const InvoiceForm = () => {
               <div className="d-flex flex-column">
                 <div className="d-flex flex-column">
                   <div className="mb-2">
-                    <span className="fw-bold">Current&nbsp;Date:&nbsp;</span>
+                    <span className="fw-bold">Tanggal&nbsp;Sekarang:&nbsp;</span>
                     <span className="current-date">{currentDate}</span>
                   </div>
                 </div>
                 <div className="d-flex flex-row align-items-center">
-                  <span className="fw-bold d-block me-2">Due&nbsp;Date:</span>
+                  <span className="fw-bold d-block me-2">Tanggal&nbsp;Jatuh&nbsp;Tempo:</span>
                   <Form.Control
                     type="date"
                     value={dateOfIssue}
@@ -137,7 +137,7 @@ const InvoiceForm = () => {
                 </div>
               </div>
               <div className="d-flex flex-row align-items-center">
-                <span className="fw-bold me-2">Invoice&nbsp;Number:&nbsp;</span>
+                <span className="fw-bold me-2">Nomor&nbsp;Faktur:&nbsp;</span>
                 <Form.Control
                   type="number"
                   value={invoiceNumber}
@@ -152,9 +152,9 @@ const InvoiceForm = () => {
             <hr className="my-4" />
             <Row className="mb-5">
               <Col>
-                <Form.Label className="fw-bold">Bill from:</Form.Label>
+                <Form.Label className="fw-bold">Pengirim:</Form.Label>
                 <Form.Control
-                  placeholder="Who is this invoice from?"
+                  placeholder="Siapa pengirim faktur ini?"
                   rows={3}
                   value={billFrom}
                   type="text"
@@ -165,7 +165,7 @@ const InvoiceForm = () => {
                   required
                 />
                 <Form.Control
-                  placeholder="Email address"
+                  placeholder="Alamat email"
                   value={billFromEmail}
                   type="email"
                   name="billFromEmail"
@@ -175,7 +175,7 @@ const InvoiceForm = () => {
                   required
                 />
                 <Form.Control
-                  placeholder="Billing address"
+                  placeholder="Alamat pengiriman"
                   value={billFromAddress}
                   type="text"
                   name="billFromAddress"
@@ -186,9 +186,9 @@ const InvoiceForm = () => {
                 />
               </Col>
               <Col>
-                <Form.Label className="fw-bold">Bill to:</Form.Label>
+                <Form.Label className="fw-bold">Penerima:</Form.Label>
                 <Form.Control
-                  placeholder="Who is this invoice to?"
+                  placeholder="Siapa penerima faktur ini?"
                   rows={3}
                   value={billTo}
                   type="text"
@@ -199,7 +199,7 @@ const InvoiceForm = () => {
                   required
                 />
                 <Form.Control
-                  placeholder="Email address"
+                  placeholder="Alamat email"
                   value={billToEmail}
                   type="email"
                   name="billToEmail"
@@ -209,7 +209,7 @@ const InvoiceForm = () => {
                   required
                 />
                 <Form.Control
-                  placeholder="Billing address"
+                  placeholder="Alamat penerima"
                   value={billToAddress}
                   type="text"
                   name="billToAddress"
@@ -237,7 +237,7 @@ const InvoiceForm = () => {
                   </span>
                 </div>
                 <div className="d-flex flex-row align-items-start justify-content-between mt-2">
-                  <span className="fw-bold">Discount:</span>
+                  <span className="fw-bold">Diskon:</span>
                   <span>
                     <span className="small ">({discountRate || 0}%)</span>
                     {currency}
@@ -245,7 +245,7 @@ const InvoiceForm = () => {
                   </span>
                 </div>
                 <div className="d-flex flex-row align-items-start justify-content-between mt-2">
-                  <span className="fw-bold">Tax:</span>
+                  <span className="fw-bold">Pajak:</span>
                   <span>
                     <span className="small ">({taxRate || 0}%)</span>
                     {currency}
@@ -266,9 +266,9 @@ const InvoiceForm = () => {
               </Col>
             </Row>
             <hr className="my-4" />
-            <Form.Label className="fw-bold">Notes:</Form.Label>
+            <Form.Label className="fw-bold">Catatan:</Form.Label>
             <Form.Control
-              placeholder="Thank you for doing business with us. Have a great day!"
+              placeholder="Terima kasih telah berbisnis dengan kami. Semoga hari Anda menyenangkan!"
               name="notes"
               value={notes}
               onChange={handleChange(setNotes)}
@@ -303,7 +303,7 @@ const InvoiceForm = () => {
             />
 
             <Form.Group className="mb-3">
-              <Form.Label className="fw-bold">Currency:</Form.Label>
+              <Form.Label className="fw-bold">Mata Uang:</Form.Label>
               <Form.Select
                 onChange={(e) => {
                   setCurrency(e.target.value);
@@ -311,19 +311,19 @@ const InvoiceForm = () => {
                 className="btn btn-light my-1"
                 aria-label="Change Currency"
               >
-                <option value="$">USD (United States Dollar)</option>
-                <option value="£">GBP (British Pound Sterling)</option>
-                <option value="₹">INR (Indian Rupee)</option>
-                <option value="¥">JPY (Japanese Yen)</option>
-                <option value="$">CAD (Canadian Dollar)</option>
-                <option value="$">AUD (Australian Dollar)</option>
-                <option value="$">SGD (Singapore Dollar)</option>
-                <option value="¥">CNY (Chinese Renminbi)</option>
+                <option value="$">USD (Dolar Amerika Serikat)</option>
+                <option value="£">GBP (Pound Inggris)</option>
+                <option value="₹">INR (Rupee India)</option>
+                <option value="¥">JPY (Yen Jepang)</option>
+                <option value="$">CAD (Dolar Kanada)</option>
+                <option value="$">AUD (Dolar Australia)</option>
+                <option value="$">SGD (Dolar Singapura)</option>
+                <option value="¥">CNY (Renminbi Tiongkok)</option>
                 <option value="₿">BTC (Bitcoin)</option>
               </Form.Select>
             </Form.Group>
             <Form.Group className="my-3">
-              <Form.Label className="fw-bold">Tax rate:</Form.Label>
+              <Form.Label className="fw-bold">Tarif Pajak:</Form.Label>
               <InputGroup className="my-1 flex-nowrap">
                 <Form.Control
                   name="taxRate"
@@ -342,7 +342,7 @@ const InvoiceForm = () => {
               </InputGroup>
             </Form.Group>
             <Form.Group className="my-3">
-              <Form.Label className="fw-bold">Discount rate:</Form.Label>
+              <Form.Label className="fw-bold">Tarif Diskon:</Form.Label>
               <InputGroup className="my-1 flex-nowrap">
                 <Form.Control
                   name="discountRate"
@@ -366,7 +366,7 @@ const InvoiceForm = () => {
               type="submit"
               className="d-block w-100 btn-secondary"
             >
-              Review Invoice
+              Lihat Faktur
             </Button>
           </div>
         </Col>
