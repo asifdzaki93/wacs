@@ -312,14 +312,7 @@ const InvoiceForm = () => {
                 aria-label="Change Currency"
               >
                 <option value="$">USD (Dolar Amerika Serikat)</option>
-                <option value="£">GBP (Pound Inggris)</option>
-                <option value="₹">INR (Rupee India)</option>
-                <option value="¥">JPY (Yen Jepang)</option>
-                <option value="$">CAD (Dolar Kanada)</option>
-                <option value="$">AUD (Dolar Australia)</option>
-                <option value="$">SGD (Dolar Singapura)</option>
-                <option value="¥">CNY (Renminbi Tiongkok)</option>
-                <option value="₿">BTC (Bitcoin)</option>
+                <option value="Rp">IDR (Rupiah Indonesia)</option>
               </Form.Select>
             </Form.Group>
             <Form.Group className="my-3">
