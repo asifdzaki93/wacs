@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     alignItems: "center",
     padding: theme.spacing(1),
-    maxWidth: 600, // Atur lebar maksimum sesuai kebutuhan
+    maxWidth: "calc(100vw - 20px)", // Mengurangi 20px untuk memberikan sedikit ruang tepi
   }  
 }));
 
