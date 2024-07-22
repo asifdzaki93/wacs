@@ -15,6 +15,9 @@ const useStyles = makeStyles(theme => ({
     table: {
       minWidth: 700,
     },
+    tableRow: {
+      height: 30, // Atur tinggi baris
+    },
   }));
 
 const Kasir = () => {
@@ -45,7 +48,7 @@ const Kasir = () => {
             </TableHead>
             <TableBody>
               {/* Data penjualan akan ditampilkan di sini */}
-              <TableRow>
+              <TableRow className={classes.tableRow}>
                 <TableCell component="th" scope="row">
                   1
                 </TableCell>
