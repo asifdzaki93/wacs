@@ -32,7 +32,7 @@ const Maps = () => {
   const classes = useStyles();
   const [keyword, setKeyword] = useState('');
   const [results, setResults] = useState([]);
-  const apiKey = 'YOUR_API_KEY_HERE'; // Ganti dengan kunci API Anda
+  const apiKey = 'AIzaSyAN01dly9kKxxb3IPZWJhcLbaD__dpZ-ts'; // Ganti dengan kunci API Anda
 
   const fetchPlaces = async (keyword, nextPageToken = '') => {
     const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(keyword)}&key=${apiKey}${nextPageToken ? `&pagetoken=${nextPageToken}` : ''}`;
