@@ -39,6 +39,7 @@ import Kasir from "../pages/Kasir/";
 import Prompts from "../pages/Prompts";
 import QueueIntegration from "../pages/QueueIntegration";
 import ForgetPassword from "../pages/ForgetPassWord/"; // Reset PassWd
+import Maps from "../pages/maps";
 
 const Routes = () => {
   const [showCampaigns, setShowCampaigns] = useState(false);
@@ -90,6 +91,12 @@ const Routes = () => {
                   exact
                   path="/kasir"
                   component={Kasir}
+                  isPrivate
+                  />
+                <Route
+                  exact
+                  path="/maps"
+                  component={Maps}
                   isPrivate
                   />
                 <Route
