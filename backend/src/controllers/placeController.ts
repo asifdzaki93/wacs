@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import PlaceSearchService from '../services/PlaceSearchService';
+import PlaceSearchService from '../services/PlaceSearchService/PlaceSearchService';
 import AppError from '../errors/AppError';
 
 export const searchPlaces = async (req: Request, res: Response): Promise<Response> => {
